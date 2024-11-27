@@ -1,0 +1,2636 @@
+2024-11-27 11:18:09,906 p=662619 u=root n=ansible | Using /root/github/greatdbrouter_ansible/ansible.cfg as config file
+2024-11-27 11:18:10,370 p=662619 u=root n=ansible | PLAY [Apply check role] **********************************************************************************************************************************************************
+2024-11-27 11:18:10,501 p=662619 u=root n=ansible | TASK [check : Include zookeeper default variables] *******************************************************************************************************************************
+2024-11-27 11:18:10,506 p=662619 u=root n=ansible | ok: [node01] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:10,541 p=662619 u=root n=ansible | ok: [node02] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:10,558 p=662619 u=root n=ansible | ok: [node03] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:10,808 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16315)
+2024-11-27 11:18:10,811 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16310)
+2024-11-27 11:18:10,814 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16309)
+2024-11-27 11:18:10,817 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=23399)
+2024-11-27 11:18:10,819 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=9090)
+2024-11-27 11:18:10,822 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=2888)
+2024-11-27 11:18:10,825 p=662619 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=3888)
+2024-11-27 11:18:15,071 p=662619 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:18:15,073 p=662619 u=root n=ansible | fatal: [node01]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:15,074 p=662619 u=root n=ansible | fatal: [node02]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:15,077 p=662619 u=root n=ansible | fatal: [node03]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:15,078 p=662619 u=root n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2024-11-27 11:18:15,078 p=662619 u=root n=ansible | node01                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:18:15,078 p=662619 u=root n=ansible | node02                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:18:15,079 p=662619 u=root n=ansible | node03                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:18:52,983 p=663228 u=root n=ansible | Using /root/github/greatdbrouter_ansible/ansible.cfg as config file
+2024-11-27 11:18:53,254 p=663228 u=root n=ansible | PLAY [Apply check role] **********************************************************************************************************************************************************
+2024-11-27 11:18:53,335 p=663228 u=root n=ansible | TASK [check : Include zookeeper default variables] *******************************************************************************************************************************
+2024-11-27 11:18:53,340 p=663228 u=root n=ansible | ok: [node01] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:53,368 p=663228 u=root n=ansible | ok: [node02] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:53,383 p=663228 u=root n=ansible | ok: [node03] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:18:53,574 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16315)
+2024-11-27 11:18:53,578 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16310)
+2024-11-27 11:18:53,580 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16309)
+2024-11-27 11:18:53,582 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=23399)
+2024-11-27 11:18:53,587 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=9090)
+2024-11-27 11:18:53,589 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=2888)
+2024-11-27 11:18:53,592 p=663228 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=3888)
+2024-11-27 11:18:55,784 p=663228 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:18:55,785 p=663228 u=root n=ansible | fatal: [node01]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:55,802 p=663228 u=root n=ansible | fatal: [node02]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:55,813 p=663228 u=root n=ansible | fatal: [node03]: UNREACHABLE! => changed=false 
+  msg: |-
+    Invalid/incorrect password:
+    Authorized users only. All activities may be monitored and reported.
+    Permission denied, please try again.
+  unreachable: true
+2024-11-27 11:18:55,814 p=663228 u=root n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2024-11-27 11:18:55,814 p=663228 u=root n=ansible | node01                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:18:55,815 p=663228 u=root n=ansible | node02                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:18:55,815 p=663228 u=root n=ansible | node03                     : ok=8    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-27 11:19:11,472 p=663497 u=root n=ansible | Using /root/github/greatdbrouter_ansible/ansible.cfg as config file
+2024-11-27 11:19:11,700 p=663497 u=root n=ansible | PLAY [Apply check role] **********************************************************************************************************************************************************
+2024-11-27 11:19:11,777 p=663497 u=root n=ansible | TASK [check : Include zookeeper default variables] *******************************************************************************************************************************
+2024-11-27 11:19:11,781 p=663497 u=root n=ansible | ok: [node01] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:19:11,809 p=663497 u=root n=ansible | ok: [node02] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:19:11,820 p=663497 u=root n=ansible | ok: [node03] => changed=false 
+  ansible_facts:
+    java_home: '{{ jdk_base_dir }}'
+    jdk_base_dir: '{{ base_dir }}/jdk_{{ jdk_version }}'
+    jdk_install_group: '{{ ansible_user }}'
+    jdk_install_user: '{{ ansible_user }}'
+    zookeeper_app_base_dir: '{{ zookeeper_app_dir }}/zookeeper-{{ zookeeper_version }}'
+    zookeeper_app_dir: '{{ base_dir }}/app'
+    zookeeper_base_dir: '{{ base_dir }}/zookeeperdata'
+    zookeeper_bin_dir: '{{ zookeeper_app_base_dir }}/bin'
+    zookeeper_communication_port: '3888'
+    zookeeper_conf_dir: '{{ zookeeper_base_dir }}/conf'
+    zookeeper_data_dir: '{{ zookeeper_base_dir }}/data'
+    zookeeper_election_port: '2888'
+    zookeeper_install_group: '{{ ansible_user }}'
+    zookeeper_install_user: '{{ ansible_user }}'
+    zookeeper_log_dir: '{{ zookeeper_base_dir }}/log'
+    zookeeper_log_maxbackupindex: '3'
+    zookeeper_log_maxfilesize: 1MB
+    zookeeper_log_rollingfile: 'ON'
+  ansible_included_var_files:
+  - /root/github/greatdbrouter_ansible/roles/zookeeper/defaults/main.yml
+2024-11-27 11:19:12,020 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16315)
+2024-11-27 11:19:12,023 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16310)
+2024-11-27 11:19:12,026 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=16309)
+2024-11-27 11:19:12,029 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=23399)
+2024-11-27 11:19:12,031 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=9090)
+2024-11-27 11:19:12,036 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=2888)
+2024-11-27 11:19:12,038 p=663497 u=root n=ansible | included: /root/github/greatdbrouter_ansible/roles/check/tasks/check_service_port.yml for node01, node02, node03 => (item=3888)
+2024-11-27 11:19:13,648 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:13,652 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:16315 | wc -l
+  delta: '0:00:00.036867'
+  end: '2024-11-27 11:19:13.551195'
+  rc: 0
+  start: '2024-11-27 11:19:13.514328'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:13,655 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:16315 | wc -l
+  delta: '0:00:00.049999'
+  end: '2024-11-27 11:19:13.568852'
+  rc: 0
+  start: '2024-11-27 11:19:13.518853'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:13,738 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:16315 | wc -l
+  delta: '0:00:00.044661'
+  end: '2024-11-27 11:19:13.614255'
+  rc: 0
+  start: '2024-11-27 11:19:13.569594'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:14,550 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:14,553 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:16310 | wc -l
+  delta: '0:00:00.036485'
+  end: '2024-11-27 11:19:14.455623'
+  rc: 0
+  start: '2024-11-27 11:19:14.419138'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:14,572 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:16310 | wc -l
+  delta: '0:00:00.041556'
+  end: '2024-11-27 11:19:14.479412'
+  rc: 0
+  start: '2024-11-27 11:19:14.437856'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:14,575 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:16310 | wc -l
+  delta: '0:00:00.036701'
+  end: '2024-11-27 11:19:14.474360'
+  rc: 0
+  start: '2024-11-27 11:19:14.437659'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:15,373 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:15,376 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:16309 | wc -l
+  delta: '0:00:00.038816'
+  end: '2024-11-27 11:19:15.272603'
+  rc: 0
+  start: '2024-11-27 11:19:15.233787'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:15,395 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:16309 | wc -l
+  delta: '0:00:00.031565'
+  end: '2024-11-27 11:19:15.282040'
+  rc: 0
+  start: '2024-11-27 11:19:15.250475'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:15,412 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:16309 | wc -l
+  delta: '0:00:00.036383'
+  end: '2024-11-27 11:19:15.308582'
+  rc: 0
+  start: '2024-11-27 11:19:15.272199'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:16,221 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:16,224 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:23399 | wc -l
+  delta: '0:00:00.045006'
+  end: '2024-11-27 11:19:16.121217'
+  rc: 0
+  start: '2024-11-27 11:19:16.076211'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:16,242 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:23399 | wc -l
+  delta: '0:00:00.037925'
+  end: '2024-11-27 11:19:16.081598'
+  rc: 0
+  start: '2024-11-27 11:19:16.043673'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:16,255 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:23399 | wc -l
+  delta: '0:00:00.027103'
+  end: '2024-11-27 11:19:16.130233'
+  rc: 0
+  start: '2024-11-27 11:19:16.103130'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,046 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:17,048 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:9090 | wc -l
+  delta: '0:00:00.037169'
+  end: '2024-11-27 11:19:16.932828'
+  rc: 0
+  start: '2024-11-27 11:19:16.895659'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,084 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:9090 | wc -l
+  delta: '0:00:00.033337'
+  end: '2024-11-27 11:19:16.958517'
+  rc: 0
+  start: '2024-11-27 11:19:16.925180'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,097 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:9090 | wc -l
+  delta: '0:00:00.041682'
+  end: '2024-11-27 11:19:16.951440'
+  rc: 0
+  start: '2024-11-27 11:19:16.909758'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,887 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:17,890 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:2888 | wc -l
+  delta: '0:00:00.042600'
+  end: '2024-11-27 11:19:17.781875'
+  rc: 0
+  start: '2024-11-27 11:19:17.739275'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,931 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:2888 | wc -l
+  delta: '0:00:00.036658'
+  end: '2024-11-27 11:19:17.807679'
+  rc: 0
+  start: '2024-11-27 11:19:17.771021'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:17,954 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:2888 | wc -l
+  delta: '0:00:00.041008'
+  end: '2024-11-27 11:19:17.834956'
+  rc: 0
+  start: '2024-11-27 11:19:17.793948'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:18,785 p=663497 u=root n=ansible | TASK [check : Check whether the port is in used] *********************************************************************************************************************************
+2024-11-27 11:19:18,788 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: lsof -i:3888 | wc -l
+  delta: '0:00:00.032367'
+  end: '2024-11-27 11:19:18.693934'
+  rc: 0
+  start: '2024-11-27 11:19:18.661567'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:18,796 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: lsof -i:3888 | wc -l
+  delta: '0:00:00.030559'
+  end: '2024-11-27 11:19:18.688824'
+  rc: 0
+  start: '2024-11-27 11:19:18.658265'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:18,823 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: lsof -i:3888 | wc -l
+  delta: '0:00:00.040090'
+  end: '2024-11-27 11:19:18.719636'
+  rc: 0
+  start: '2024-11-27 11:19:18.679546'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '0'
+  stdout_lines: <omitted>
+2024-11-27 11:19:18,973 p=663497 u=root n=ansible | PLAY [Apply mysql role] **********************************************************************************************************************************************************
+2024-11-27 11:19:19,594 p=663497 u=root n=ansible | TASK [db : Generate db_uuid] *****************************************************************************************************************************************************
+2024-11-27 11:19:19,596 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.019793'
+  end: '2024-11-27 11:19:19.474967'
+  rc: 0
+  start: '2024-11-27 11:19:19.455174'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-2d8d-4917-bb0b-f94488ff6057
+  stdout_lines: <omitted>
+2024-11-27 11:19:19,627 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.027270'
+  end: '2024-11-27 11:19:19.513768'
+  rc: 0
+  start: '2024-11-27 11:19:19.486498'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-cfa6-4da5-b58e-605c1ed1153d
+  stdout_lines: <omitted>
+2024-11-27 11:19:19,652 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.007635'
+  end: '2024-11-27 11:19:19.545065'
+  rc: 0
+  start: '2024-11-27 11:19:19.537430'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-17ce-421a-8da6-24bdb05f3459
+  stdout_lines: <omitted>
+2024-11-27 11:19:20,192 p=663497 u=root n=ansible | TASK [db : Generate server_id] ***************************************************************************************************************************************************
+2024-11-27 11:19:20,195 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.006824'
+  end: '2024-11-27 11:19:20.107317'
+  rc: 0
+  start: '2024-11-27 11:19:20.100493'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '24072232'
+  stdout_lines: <omitted>
+2024-11-27 11:19:20,235 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.006740'
+  end: '2024-11-27 11:19:20.136876'
+  rc: 0
+  start: '2024-11-27 11:19:20.130136'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '17206502'
+  stdout_lines: <omitted>
+2024-11-27 11:19:20,275 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.007008'
+  end: '2024-11-27 11:19:20.167261'
+  rc: 0
+  start: '2024-11-27 11:19:20.160253'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '28157135'
+  stdout_lines: <omitted>
+2024-11-27 11:19:21,265 p=663497 u=root n=ansible | TASK [db : Create dir for db] ****************************************************************************************************************************************************
+2024-11-27 11:19:21,268 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/tmpdir) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 313
+  state: directory
+  uid: 1002
+2024-11-27 11:19:21,273 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/tmpdir) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 313
+  state: directory
+  uid: 1002
+2024-11-27 11:19:21,275 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/tmpdir) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 313
+  state: directory
+  uid: 1002
+2024-11-27 11:19:21,880 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/app) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:21,897 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/app) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:21,908 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/app) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:22,422 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/app/greatdb-8.0.36) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/greatdb-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/greatdb-8.0.36
+  size: 306
+  state: directory
+  uid: 1002
+2024-11-27 11:19:22,497 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/app/greatdb-8.0.36) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/greatdb-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/greatdb-8.0.36
+  size: 306
+  state: directory
+  uid: 1002
+2024-11-27 11:19:22,508 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/app/greatdb-8.0.36) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/greatdb-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/greatdb-8.0.36
+  size: 306
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,023 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/greatdbdata) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata
+  size: 50
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,053 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/greatdbdata) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata
+  size: 50
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,109 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/greatdbdata) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata
+  size: 50
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,638 p=663497 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,661 p=663497 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:23,684 p=663497 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,251 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,263 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,274 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,855 p=663497 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,858 p=663497 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:24,876 p=663497 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:25,432 p=663497 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:25,439 p=663497 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:25,502 p=663497 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:25,998 p=663497 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:26,043 p=663497 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:26,129 p=663497 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:26,620 p=663497 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:26,694 p=663497 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:26,749 p=663497 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:19:27,209 p=663497 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/xtrabackup) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:27,300 p=663497 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/xtrabackup) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:27,349 p=663497 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/xtrabackup) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 66
+  state: directory
+  uid: 1002
+2024-11-27 11:19:42,335 p=663497 u=root n=ansible | TASK [db : Copy db_package and percona_xtrabackup_package_name to install_tmpdir] ************************************************************************************************
+2024-11-27 11:19:42,338 p=663497 u=root n=ansible | changed: [node01] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677567.78-664631-110589929240229/source
+  state: file
+  uid: 1002
+2024-11-27 11:19:42,386 p=663497 u=root n=ansible | changed: [node03] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677567.84-664635-40185222681503/source
+  state: file
+  uid: 1002
+2024-11-27 11:19:43,251 p=663497 u=root n=ansible | changed: [node02] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677567.8-664634-45009591687284/source
+  state: file
+  uid: 1002
+2024-11-27 11:19:44,155 p=663497 u=root n=ansible | ok: [node01] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=false 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0664'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  size: 33415078
+  state: file
+  uid: 1002
+2024-11-27 11:19:44,173 p=663497 u=root n=ansible | ok: [node03] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=false 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0664'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  size: 33415078
+  state: file
+  uid: 1002
+2024-11-27 11:19:44,541 p=663497 u=root n=ansible | ok: [node02] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=false 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0664'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  size: 33415078
+  state: file
+  uid: 1002
+2024-11-27 11:20:03,214 p=663497 u=root n=ansible | TASK [db : Extract db_package to db_app_base_dir] ********************************************************************************************************************************
+2024-11-27 11:20:03,219 p=663497 u=root n=ansible | changed: [node02] => (item={u'dest': u'/ansible_cluster/app/greatdb-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/greatdb-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/greatdb-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/greatdb-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 320
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:03,561 p=663497 u=root n=ansible | changed: [node03] => (item={u'dest': u'/ansible_cluster/app/greatdb-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/greatdb-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/greatdb-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/greatdb-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 320
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:04,503 p=663497 u=root n=ansible | changed: [node01] => (item={u'dest': u'/ansible_cluster/app/greatdb-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/greatdb-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/greatdb-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/greatdb-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 320
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:08,009 p=663497 u=root n=ansible | ok: [node02] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=false 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:08,057 p=663497 u=root n=ansible | ok: [node03] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=false 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:08,264 p=663497 u=root n=ansible | ok: [node01] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=false 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:20:08,931 p=663497 u=root n=ansible | TASK [db : Link xtrabackup command to bin dir] ***********************************************************************************************************************************
+2024-11-27 11:20:08,933 p=663497 u=root n=ansible | ok: [node01] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:20:08,937 p=663497 u=root n=ansible | ok: [node02] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:20:08,940 p=663497 u=root n=ansible | ok: [node03] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:20:10,132 p=663497 u=root n=ansible | TASK [db : Copy my.cnf.j2 template] **********************************************************************************************************************************************
+2024-11-27 11:20:10,134 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  checksum: 01dd42571f7296a8b493c7fa517455cafcfba2c8
+  dest: /ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: 6f20117124e632973a15b0e18722f92b
+  mode: '0644'
+  owner: greatdb
+  size: 4189
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677609.07-665513-68950833384612/source
+  state: file
+  uid: 1002
+2024-11-27 11:20:10,212 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  checksum: fa19415ce34794e0ccf777d3a18b6e74e2ca1d63
+  dest: /ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: f974c10b4fe2dc48d20e6dbdb4d0b210
+  mode: '0644'
+  owner: greatdb
+  size: 4189
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677609.01-665510-237620754066295/source
+  state: file
+  uid: 1002
+2024-11-27 11:20:10,243 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  checksum: c969ddfc75a7dc655bf4b102a03558d5587cd2ea
+  dest: /ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: f5c6c9b4e8dc560b3151bd4dc7f042f6
+  mode: '0644'
+  owner: greatdb
+  size: 4189
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677609.04-665511-36029711834004/source
+  state: file
+  uid: 1002
+2024-11-27 11:20:34,664 p=663497 u=root n=ansible | TASK [db : Init DB] **************************************************************************************************************************************************************
+2024-11-27 11:20:34,667 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd --defaults-file=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:23.756065'
+  end: '2024-11-27 11:20:34.543299'
+  rc: 0
+  start: '2024-11-27 11:20:10.787234'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:34,931 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd --defaults-file=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:23.870539'
+  end: '2024-11-27 11:20:34.628818'
+  rc: 0
+  start: '2024-11-27 11:20:10.758279'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:35,542 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd --defaults-file=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:24.660469'
+  end: '2024-11-27 11:20:35.427754'
+  rc: 0
+  start: '2024-11-27 11:20:10.767285'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:37,217 p=663497 u=root n=ansible | TASK [db : Start DB] *************************************************************************************************************************************************************
+2024-11-27 11:20:37,220 p=663497 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: nohup /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd_safe --defaults-file=/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/my16315.conf --user=greatdb &
+  delta: '0:00:01.003727'
+  end: '2024-11-27 11:20:37.125440'
+  rc: 0
+  start: '2024-11-27 11:20:36.121713'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:37,253 p=663497 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: nohup /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd_safe --defaults-file=/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/my16315.conf --user=greatdb &
+  delta: '0:00:01.004598'
+  end: '2024-11-27 11:20:37.117686'
+  rc: 0
+  start: '2024-11-27 11:20:36.113088'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:37,421 p=663497 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: nohup /ansible_cluster/app/greatdb-8.0.36/bin/greatdbd_safe --defaults-file=/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/my16315.conf --user=greatdb &
+  delta: '0:00:01.004071'
+  end: '2024-11-27 11:20:37.324283'
+  rc: 0
+  start: '2024-11-27 11:20:36.320212'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:20:38,320 p=663497 u=root n=ansible | TASK [db : Add DB env variables to ~/.bashrc] ************************************************************************************************************************************
+2024-11-27 11:20:38,321 p=663497 u=root n=ansible | ok: [node03] => changed=false 
+  msg: ''
+2024-11-27 11:20:38,361 p=663497 u=root n=ansible | ok: [node01] => changed=false 
+  msg: ''
+2024-11-27 11:20:38,636 p=663497 u=root n=ansible | ok: [node02] => changed=false 
+  msg: ''
+2024-11-27 11:21:32,801 p=663497 u=root n=ansible | TASK [db : Check DB connection] **************************************************************************************************************************************************
+2024-11-27 11:21:32,805 p=663497 u=root n=ansible | fatal: [node02]: FAILED! => changed=true 
+  attempts: 5
+  cmd: ./greatdb --no-defaults -uroot  -S'/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/socket/greatdb.sock' -e "SELECT 1;"
+  delta: '0:00:00.009814'
+  end: '2024-11-27 11:21:32.711036'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-27 11:21:32.701222'
+  stderr: 'ERROR 2002 (HY000): Can''t connect to local MySQL server through socket ''/ansible_cluster/greatdbdata/16315fff-2d8d-4917-bb0b-f94488ff6057/socket/greatdb.sock'' (2)'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:21:32,927 p=663497 u=root n=ansible | fatal: [node01]: FAILED! => changed=true 
+  attempts: 5
+  cmd: ./greatdb --no-defaults -uroot  -S'/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/socket/greatdb.sock' -e "SELECT 1;"
+  delta: '0:00:00.012740'
+  end: '2024-11-27 11:21:32.784716'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-27 11:21:32.771976'
+  stderr: 'ERROR 2002 (HY000): Can''t connect to local MySQL server through socket ''/ansible_cluster/greatdbdata/16315fff-cfa6-4da5-b58e-605c1ed1153d/socket/greatdb.sock'' (2)'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:21:33,125 p=663497 u=root n=ansible | fatal: [node03]: FAILED! => changed=true 
+  attempts: 5
+  cmd: ./greatdb --no-defaults -uroot  -S'/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/socket/greatdb.sock' -e "SELECT 1;"
+  delta: '0:00:00.012040'
+  end: '2024-11-27 11:21:33.010007'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-27 11:21:32.997967'
+  stderr: 'ERROR 2002 (HY000): Can''t connect to local MySQL server through socket ''/ansible_cluster/greatdbdata/16315fff-17ce-421a-8da6-24bdb05f3459/socket/greatdb.sock'' (2)'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:21:33,127 p=663497 u=root n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2024-11-27 11:21:33,128 p=663497 u=root n=ansible | node01                     : ok=25   changed=15   unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
+2024-11-27 11:21:33,128 p=663497 u=root n=ansible | node02                     : ok=25   changed=15   unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
+2024-11-27 11:21:33,128 p=663497 u=root n=ansible | node03                     : ok=25   changed=15   unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
+2024-11-27 11:25:23,293 p=669745 u=root n=ansible | Using /root/github/greatdbrouter_ansible/ansible.cfg as config file
+2024-11-27 11:25:23,700 p=669745 u=root n=ansible | PLAY [Apply check role] **********************************************************************************************************************************************************
+2024-11-27 11:25:23,765 p=669745 u=root n=ansible | PLAY [Apply mysql role] **********************************************************************************************************************************************************
+2024-11-27 11:25:25,115 p=669745 u=root n=ansible | TASK [db : Generate db_uuid] *****************************************************************************************************************************************************
+2024-11-27 11:25:25,119 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.006079'
+  end: '2024-11-27 11:25:25.026565'
+  rc: 0
+  start: '2024-11-27 11:25:25.020486'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-1e5d-4ecd-9ca5-5d4650393237
+  stdout_lines: <omitted>
+2024-11-27 11:25:25,122 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.006594'
+  end: '2024-11-27 11:25:25.021789'
+  rc: 0
+  start: '2024-11-27 11:25:25.015195'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-a89f-4cae-987b-823232a3d16b
+  stdout_lines: <omitted>
+2024-11-27 11:25:25,124 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: uuidgen |sed 's/^[^-]*/16315fff/'
+  delta: '0:00:00.006265'
+  end: '2024-11-27 11:25:25.037057'
+  rc: 0
+  start: '2024-11-27 11:25:25.030792'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: 16315fff-5562-4618-a652-5846484d18d1
+  stdout_lines: <omitted>
+2024-11-27 11:25:25,682 p=669745 u=root n=ansible | TASK [db : Generate server_id] ***************************************************************************************************************************************************
+2024-11-27 11:25:25,685 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.004970'
+  end: '2024-11-27 11:25:25.594804'
+  rc: 0
+  start: '2024-11-27 11:25:25.589834'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '22619042'
+  stdout_lines: <omitted>
+2024-11-27 11:25:25,704 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.005791'
+  end: '2024-11-27 11:25:25.620069'
+  rc: 0
+  start: '2024-11-27 11:25:25.614278'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '81993337'
+  stdout_lines: <omitted>
+2024-11-27 11:25:25,739 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: echo $RANDOM |cksum |cut -c 1-8
+  delta: '0:00:00.006278'
+  end: '2024-11-27 11:25:25.645099'
+  rc: 0
+  start: '2024-11-27 11:25:25.638821'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: '16648516'
+  stdout_lines: <omitted>
+2024-11-27 11:25:26,652 p=669745 u=root n=ansible | TASK [db : Create dir for db] ****************************************************************************************************************************************************
+2024-11-27 11:25:26,655 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/tmpdir) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:26,690 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/tmpdir) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:26,701 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/tmpdir) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/tmpdir
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/tmpdir
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,175 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/app) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,226 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/app) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,253 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/app) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,742 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/app/mysql-8.0.36) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/mysql-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/mysql-8.0.36
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,792 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/app/mysql-8.0.36) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/mysql-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/mysql-8.0.36
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:27,932 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/app/mysql-8.0.36) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/app/mysql-8.0.36
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/app/mysql-8.0.36
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:28,286 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:28,332 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:28,497 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:28,878 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:28,954 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:29,077 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/dbdata) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/dbdata
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/dbdata
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:29,426 p=669745 u=root n=ansible | ok: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:25:29,536 p=669745 u=root n=ansible | ok: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:25:29,645 p=669745 u=root n=ansible | ok: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237) => changed=false 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237
+  size: 20
+  state: directory
+  uid: 1002
+2024-11-27 11:25:29,941 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:30,051 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:30,176 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/logfile) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/logfile
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/logfile
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:30,480 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:30,550 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:30,766 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/tmp) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/tmp
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/tmp
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,045 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,097 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,371 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/pid) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/pid
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/pid
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,591 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,645 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:31,931 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:32,133 p=669745 u=root n=ansible | changed: [node02] => (item=/ansible_cluster/xtrabackup) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:32,207 p=669745 u=root n=ansible | changed: [node01] => (item=/ansible_cluster/xtrabackup) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:32,497 p=669745 u=root n=ansible | changed: [node03] => (item=/ansible_cluster/xtrabackup) => changed=true 
+  ansible_loop_var: item
+  gid: 1002
+  group: greatdb
+  item: /ansible_cluster/xtrabackup
+  mode: '0755'
+  owner: greatdb
+  path: /ansible_cluster/xtrabackup
+  size: 6
+  state: directory
+  uid: 1002
+2024-11-27 11:25:46,129 p=669745 u=root n=ansible | TASK [db : Copy db_package and percona_xtrabackup_package_name to install_tmpdir] ************************************************************************************************
+2024-11-27 11:25:46,132 p=669745 u=root n=ansible | changed: [node01] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677932.93-670427-193970716003917/source
+  state: file
+  uid: 1002
+2024-11-27 11:25:46,219 p=669745 u=root n=ansible | changed: [node02] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677932.95-670428-133014162795610/source
+  state: file
+  uid: 1002
+2024-11-27 11:25:47,178 p=669745 u=root n=ansible | changed: [node03] => (item=mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: a9c7d53067018a5f0ddb7bf740ecff0591e15b9b
+  dest: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  md5sum: 14cbd30cc261c40ec6d414f7515bb37c
+  mode: '0664'
+  owner: greatdb
+  size: 135041007
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677933.01-670430-189963440848662/source
+  state: file
+  uid: 1002
+2024-11-27 11:25:49,420 p=669745 u=root n=ansible | changed: [node02] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  md5sum: bc8889a59db791bea7364d000411564e
+  mode: '0664'
+  owner: greatdb
+  size: 33415078
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677946.25-670428-267825083643837/source
+  state: file
+  uid: 1002
+2024-11-27 11:25:49,560 p=669745 u=root n=ansible | changed: [node01] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  md5sum: bc8889a59db791bea7364d000411564e
+  mode: '0664'
+  owner: greatdb
+  size: 33415078
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677946.16-670427-91249211407305/source
+  state: file
+  uid: 1002
+2024-11-27 11:25:51,498 p=669745 u=root n=ansible | changed: [node03] => (item=percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz) => changed=true 
+  ansible_loop_var: item
+  checksum: 40443ceaf9bf4157c891af64f1b60f2a137e309c
+  dest: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  gid: 1002
+  group: greatdb
+  item: percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  md5sum: bc8889a59db791bea7364d000411564e
+  mode: '0664'
+  owner: greatdb
+  size: 33415078
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677947.22-670430-168418235234415/source
+  state: file
+  uid: 1002
+2024-11-27 11:26:09,701 p=669745 u=root n=ansible | TASK [db : Extract db_package to db_app_base_dir] ********************************************************************************************************************************
+2024-11-27 11:26:09,706 p=669745 u=root n=ansible | changed: [node01] => (item={u'dest': u'/ansible_cluster/app/mysql-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/mysql-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/mysql-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/mysql-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 129
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:10,966 p=669745 u=root n=ansible | changed: [node03] => (item={u'dest': u'/ansible_cluster/app/mysql-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/mysql-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/mysql-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/mysql-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 129
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:11,556 p=669745 u=root n=ansible | changed: [node02] => (item={u'dest': u'/ansible_cluster/app/mysql-8.0.36', u'src': u'/ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/app/mysql-8.0.36
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/app/mysql-8.0.36
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/app/mysql-8.0.36
+    src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 129
+  src: /ansible_cluster/tmpdir/mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:14,426 p=669745 u=root n=ansible | changed: [node01] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/xtrabackup
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:16,371 p=669745 u=root n=ansible | changed: [node03] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/xtrabackup
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:16,450 p=669745 u=root n=ansible | changed: [node02] => (item={u'dest': u'/ansible_cluster/xtrabackup', u'src': u'/ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz'}) => changed=true 
+  ansible_loop_var: item
+  dest: /ansible_cluster/xtrabackup
+  extract_results:
+    cmd:
+    - /usr/bin/gtar
+    - --extract
+    - -C
+    - /ansible_cluster/xtrabackup
+    - -z
+    - --show-transformed-names
+    - --strip-components=1
+    - --owner=greatdb
+    - --group=greatdb
+    - -f
+    - /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+    err: ''
+    out: ''
+    rc: 0
+  gid: 1002
+  group: greatdb
+  handler: TgzArchive
+  item:
+    dest: /ansible_cluster/xtrabackup
+    src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  mode: '0755'
+  owner: greatdb
+  size: 66
+  src: /ansible_cluster/tmpdir/percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  state: directory
+  uid: 1002
+2024-11-27 11:26:17,074 p=669745 u=root n=ansible | TASK [db : Link xtrabackup command to bin dir] ***********************************************************************************************************************************
+2024-11-27 11:26:17,076 p=669745 u=root n=ansible | ok: [node01] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:26:17,138 p=669745 u=root n=ansible | ok: [node03] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:26:17,283 p=669745 u=root n=ansible | ok: [node02] => changed=false 
+  dest: /usr/local/bin/xtrabackup
+  gid: 0
+  group: root
+  mode: '0777'
+  owner: root
+  size: 42
+  src: /ansible_cluster/xtrabackup/bin/xtrabackup
+  state: link
+  uid: 0
+2024-11-27 11:26:18,588 p=669745 u=root n=ansible | TASK [db : Copy my.cnf.j2 template] **********************************************************************************************************************************************
+2024-11-27 11:26:18,591 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  checksum: 7cf7fe2936e99b86be88b742506b21ff9b6709eb
+  dest: /ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: 1eed6355ee0139b40c8e475cce225edc
+  mode: '0644'
+  owner: greatdb
+  size: 4169
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677977.38-671424-100949108351790/source
+  state: file
+  uid: 1002
+2024-11-27 11:26:18,599 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  checksum: 24d3f0b838f450b16b0f8b7859db4dae9ade536b
+  dest: /ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: f707abf9fe2d9e168310cb4f1b310044
+  mode: '0644'
+  owner: greatdb
+  size: 4169
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677977.35-671423-71663101661381/source
+  state: file
+  uid: 1002
+2024-11-27 11:26:18,670 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  checksum: f8a3d477cc835dbb78093ed5099907c9b8340b91
+  dest: /ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/my16315.conf
+  gid: 1002
+  group: greatdb
+  md5sum: c7b50432f7eaef11b9b4cc399b1adb60
+  mode: '0644'
+  owner: greatdb
+  size: 4169
+  src: /home/greatdb/.ansible/tmp/ansible-tmp-1732677977.45-671426-44420607755354/source
+  state: file
+  uid: 1002
+2024-11-27 11:26:34,194 p=669745 u=root n=ansible | TASK [db : Init DB] **************************************************************************************************************************************************************
+2024-11-27 11:26:34,197 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: /ansible_cluster/app/mysql-8.0.36/bin/mysqld --defaults-file=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:14.886902'
+  end: '2024-11-27 11:26:34.060219'
+  rc: 0
+  start: '2024-11-27 11:26:19.173317'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:34,379 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: /ansible_cluster/app/mysql-8.0.36/bin/mysqld --defaults-file=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:14.988743'
+  end: '2024-11-27 11:26:34.260309'
+  rc: 0
+  start: '2024-11-27 11:26:19.271566'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:34,483 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: /ansible_cluster/app/mysql-8.0.36/bin/mysqld --defaults-file=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/my16315.conf --initialize-insecure --user=greatdb
+  delta: '0:00:15.142813'
+  end: '2024-11-27 11:26:34.386957'
+  rc: 0
+  start: '2024-11-27 11:26:19.244144'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:36,106 p=669745 u=root n=ansible | TASK [db : Start DB] *************************************************************************************************************************************************************
+2024-11-27 11:26:36,108 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: nohup /ansible_cluster/app/mysql-8.0.36/bin/mysqld_safe --defaults-file=/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/my16315.conf --user=greatdb &
+  delta: '0:00:01.004226'
+  end: '2024-11-27 11:26:35.996510'
+  rc: 0
+  start: '2024-11-27 11:26:34.992284'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:36,125 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: nohup /ansible_cluster/app/mysql-8.0.36/bin/mysqld_safe --defaults-file=/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/my16315.conf --user=greatdb &
+  delta: '0:00:01.003970'
+  end: '2024-11-27 11:26:36.045606'
+  rc: 0
+  start: '2024-11-27 11:26:35.041636'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:36,157 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: nohup /ansible_cluster/app/mysql-8.0.36/bin/mysqld_safe --defaults-file=/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/my16315.conf --user=greatdb &
+  delta: '0:00:01.003908'
+  end: '2024-11-27 11:26:36.066965'
+  rc: 0
+  start: '2024-11-27 11:26:35.063057'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:36,965 p=669745 u=root n=ansible | TASK [db : Add DB env variables to ~/.bashrc] ************************************************************************************************************************************
+2024-11-27 11:26:36,967 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  msg: Block inserted
+2024-11-27 11:26:37,064 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  msg: Block inserted
+2024-11-27 11:26:37,159 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  msg: Block inserted
+2024-11-27 11:26:48,549 p=669745 u=root n=ansible | TASK [db : Check DB connection] **************************************************************************************************************************************************
+2024-11-27 11:26:48,552 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  attempts: 2
+  cmd: ./mysql --no-defaults -uroot  -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket/mysql.sock' -e "SELECT 1;"
+  delta: '0:00:00.012615'
+  end: '2024-11-27 11:26:48.449810'
+  rc: 0
+  start: '2024-11-27 11:26:48.437195'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: |-
+    1
+    1
+  stdout_lines: <omitted>
+2024-11-27 11:26:48,579 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  attempts: 2
+  cmd: ./mysql --no-defaults -uroot  -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket/mysql.sock' -e "SELECT 1;"
+  delta: '0:00:00.011778'
+  end: '2024-11-27 11:26:48.503695'
+  rc: 0
+  start: '2024-11-27 11:26:48.491917'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: |-
+    1
+    1
+  stdout_lines: <omitted>
+2024-11-27 11:26:48,621 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  attempts: 2
+  cmd: ./mysql --no-defaults -uroot  -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket/mysql.sock' -e "SELECT 1;"
+  delta: '0:00:00.012086'
+  end: '2024-11-27 11:26:48.521954'
+  rc: 0
+  start: '2024-11-27 11:26:48.509868'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: |-
+    1
+    1
+  stdout_lines: <omitted>
+2024-11-27 11:26:49,280 p=669745 u=root n=ansible | TASK [db : Alter root@localhost password] ****************************************************************************************************************************************
+2024-11-27 11:26:49,283 p=669745 u=root n=ansible | changed: [node01] => changed=true 
+  cmd: ./mysqladmin -u root -S/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket/mysql.sock password '!QAZ21wsx'
+  delta: '0:00:00.058008'
+  end: '2024-11-27 11:26:49.181536'
+  rc: 0
+  start: '2024-11-27 11:26:49.123528'
+  stderr: |-
+    mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+    Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:49,355 p=669745 u=root n=ansible | changed: [node03] => changed=true 
+  cmd: ./mysqladmin -u root -S/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket/mysql.sock password '!QAZ21wsx'
+  delta: '0:00:00.051414'
+  end: '2024-11-27 11:26:49.252645'
+  rc: 0
+  start: '2024-11-27 11:26:49.201231'
+  stderr: |-
+    mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+    Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:49,442 p=669745 u=root n=ansible | changed: [node02] => changed=true 
+  cmd: ./mysqladmin -u root -S/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket/mysql.sock password '!QAZ21wsx'
+  delta: '0:00:00.204163'
+  end: '2024-11-27 11:26:49.364716'
+  rc: 0
+  start: '2024-11-27 11:26:49.160553'
+  stderr: |-
+    mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+    Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,158 p=669745 u=root n=ansible | TASK [db : Create DB users using socket authentication] **************************************************************************************************************************
+2024-11-27 11:26:50,160 p=669745 u=root n=ansible | changed: [node01] => (item=create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';"
+  delta: '0:00:00.025956'
+  end: '2024-11-27 11:26:50.051718'
+  item: create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';
+  rc: 0
+  start: '2024-11-27 11:26:50.025762'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,182 p=669745 u=root n=ansible | changed: [node02] => (item=create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';"
+  delta: '0:00:00.021360'
+  end: '2024-11-27 11:26:50.101130'
+  item: create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';
+  rc: 0
+  start: '2024-11-27 11:26:50.079770'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,192 p=669745 u=root n=ansible | changed: [node03] => (item=create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';"
+  delta: '0:00:00.023799'
+  end: '2024-11-27 11:26:50.079918'
+  item: create user 'root'@'%' identified with 'mysql_native_password' by '!QAZ21wsx';
+  rc: 0
+  start: '2024-11-27 11:26:50.056119'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,745 p=669745 u=root n=ansible | changed: [node01] => (item=grant all on *.* to 'root'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "grant all on *.* to 'root'@'%' with grant option;"
+  delta: '0:00:00.018365'
+  end: '2024-11-27 11:26:50.633461'
+  item: grant all on *.* to 'root'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:50.615096'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,771 p=669745 u=root n=ansible | changed: [node02] => (item=grant all on *.* to 'root'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "grant all on *.* to 'root'@'%' with grant option;"
+  delta: '0:00:00.017296'
+  end: '2024-11-27 11:26:50.684015'
+  item: grant all on *.* to 'root'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:50.666719'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:50,774 p=669745 u=root n=ansible | changed: [node03] => (item=grant all on *.* to 'root'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "grant all on *.* to 'root'@'%' with grant option;"
+  delta: '0:00:00.018502'
+  end: '2024-11-27 11:26:50.649496'
+  item: grant all on *.* to 'root'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:50.630994'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,312 p=669745 u=root n=ansible | changed: [node01] => (item=create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.018950'
+  end: '2024-11-27 11:26:51.204859'
+  item: create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:51.185909'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,324 p=669745 u=root n=ansible | changed: [node02] => (item=create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.015849'
+  end: '2024-11-27 11:26:51.255384'
+  item: create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:51.239535'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,360 p=669745 u=root n=ansible | changed: [node03] => (item=create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.017114'
+  end: '2024-11-27 11:26:51.254329'
+  item: create user 'admin'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:51.237215'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,850 p=669745 u=root n=ansible | changed: [node01] => (item=grant all on *.* to 'admin'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "grant all on *.* to 'admin'@'%' with grant option;"
+  delta: '0:00:00.018502'
+  end: '2024-11-27 11:26:51.752725'
+  item: grant all on *.* to 'admin'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:51.734223'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,868 p=669745 u=root n=ansible | changed: [node02] => (item=grant all on *.* to 'admin'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "grant all on *.* to 'admin'@'%' with grant option;"
+  delta: '0:00:00.018427'
+  end: '2024-11-27 11:26:51.788582'
+  item: grant all on *.* to 'admin'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:51.770155'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:51,922 p=669745 u=root n=ansible | changed: [node03] => (item=grant all on *.* to 'admin'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "grant all on *.* to 'admin'@'%' with grant option;"
+  delta: '0:00:00.015074'
+  end: '2024-11-27 11:26:51.811847'
+  item: grant all on *.* to 'admin'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:51.796773'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:52,387 p=669745 u=root n=ansible | changed: [node01] => (item=create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.019383'
+  end: '2024-11-27 11:26:52.287513'
+  item: create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:52.268130'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:52,460 p=669745 u=root n=ansible | changed: [node02] => (item=create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.018374'
+  end: '2024-11-27 11:26:52.377559'
+  item: create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:52.359185'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:52,524 p=669745 u=root n=ansible | changed: [node03] => (item=create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.016819'
+  end: '2024-11-27 11:26:52.406791'
+  item: create user 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:52.389972'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:52,967 p=669745 u=root n=ansible | changed: [node01] => (item=grant all on *.* to 'dbscale_internal'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "grant all on *.* to 'dbscale_internal'@'%' with grant option;"
+  delta: '0:00:00.017466'
+  end: '2024-11-27 11:26:52.866805'
+  item: grant all on *.* to 'dbscale_internal'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:52.849339'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:53,051 p=669745 u=root n=ansible | changed: [node02] => (item=grant all on *.* to 'dbscale_internal'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "grant all on *.* to 'dbscale_internal'@'%' with grant option;"
+  delta: '0:00:00.016932'
+  end: '2024-11-27 11:26:52.968408'
+  item: grant all on *.* to 'dbscale_internal'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:52.951476'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:53,154 p=669745 u=root n=ansible | changed: [node03] => (item=grant all on *.* to 'dbscale_internal'@'%' with grant option;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "grant all on *.* to 'dbscale_internal'@'%' with grant option;"
+  delta: '0:00:00.021933'
+  end: '2024-11-27 11:26:53.057408'
+  item: grant all on *.* to 'dbscale_internal'@'%' with grant option;
+  rc: 0
+  start: '2024-11-27 11:26:53.035475'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:53,570 p=669745 u=root n=ansible | changed: [node01] => (item=create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.024577'
+  end: '2024-11-27 11:26:53.453073'
+  item: create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:53.428496'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:53,685 p=669745 u=root n=ansible | changed: [node02] => (item=create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.016795'
+  end: '2024-11-27 11:26:53.607591'
+  item: create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:53.590796'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:53,692 p=669745 u=root n=ansible | changed: [node03] => (item=create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';"
+  delta: '0:00:00.014481'
+  end: '2024-11-27 11:26:53.591016'
+  item: create user if not exists 'dbscale_internal'@'%' identified with 'mysql_native_password' by '!QAZ2wsx';
+  rc: 0
+  start: '2024-11-27 11:26:53.576535'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,198 p=669745 u=root n=ansible | changed: [node01] => (item=grant replication slave on *.* to 'dbscale_internal'@'%';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket'/mysql.sock -e "grant replication slave on *.* to 'dbscale_internal'@'%';"
+  delta: '0:00:00.014245'
+  end: '2024-11-27 11:26:54.095193'
+  item: grant replication slave on *.* to 'dbscale_internal'@'%';
+  rc: 0
+  start: '2024-11-27 11:26:54.080948'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,281 p=669745 u=root n=ansible | changed: [node02] => (item=grant replication slave on *.* to 'dbscale_internal'@'%';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket'/mysql.sock -e "grant replication slave on *.* to 'dbscale_internal'@'%';"
+  delta: '0:00:00.017467'
+  end: '2024-11-27 11:26:54.193116'
+  item: grant replication slave on *.* to 'dbscale_internal'@'%';
+  rc: 0
+  start: '2024-11-27 11:26:54.175649'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,292 p=669745 u=root n=ansible | changed: [node03] => (item=grant replication slave on *.* to 'dbscale_internal'@'%';) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S'/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket'/mysql.sock -e "grant replication slave on *.* to 'dbscale_internal'@'%';"
+  delta: '0:00:00.013756'
+  end: '2024-11-27 11:26:54.191975'
+  item: grant replication slave on *.* to 'dbscale_internal'@'%';
+  rc: 0
+  start: '2024-11-27 11:26:54.178219'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,912 p=669745 u=root n=ansible | TASK [db : Reset master and reset slave all] *************************************************************************************************************************************
+2024-11-27 11:26:54,915 p=669745 u=root n=ansible | changed: [node01] => (item=stop slave;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket/mysql.sock -e "stop slave;"
+  delta: '0:00:00.010782'
+  end: '2024-11-27 11:26:54.817534'
+  item: stop slave;
+  rc: 0
+  start: '2024-11-27 11:26:54.806752'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,929 p=669745 u=root n=ansible | changed: [node02] => (item=stop slave;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket/mysql.sock -e "stop slave;"
+  delta: '0:00:00.011577'
+  end: '2024-11-27 11:26:54.857342'
+  item: stop slave;
+  rc: 0
+  start: '2024-11-27 11:26:54.845765'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:54,970 p=669745 u=root n=ansible | changed: [node03] => (item=stop slave;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket/mysql.sock -e "stop slave;"
+  delta: '0:00:00.010655'
+  end: '2024-11-27 11:26:54.869596'
+  item: stop slave;
+  rc: 0
+  start: '2024-11-27 11:26:54.858941'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:55,449 p=669745 u=root n=ansible | changed: [node01] => (item=reset master;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket/mysql.sock -e "reset master;"
+  delta: '0:00:00.026976'
+  end: '2024-11-27 11:26:55.347938'
+  item: reset master;
+  rc: 0
+  start: '2024-11-27 11:26:55.320962'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:55,512 p=669745 u=root n=ansible | changed: [node02] => (item=reset master;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket/mysql.sock -e "reset master;"
+  delta: '0:00:00.030288'
+  end: '2024-11-27 11:26:55.420694'
+  item: reset master;
+  rc: 0
+  start: '2024-11-27 11:26:55.390406'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:55,577 p=669745 u=root n=ansible | changed: [node03] => (item=reset master;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket/mysql.sock -e "reset master;"
+  delta: '0:00:00.038505'
+  end: '2024-11-27 11:26:55.472386'
+  item: reset master;
+  rc: 0
+  start: '2024-11-27 11:26:55.433881'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:55,990 p=669745 u=root n=ansible | changed: [node01] => (item=reset slave all;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-5562-4618-a652-5846484d18d1/socket/mysql.sock -e "reset slave all;"
+  delta: '0:00:00.012161'
+  end: '2024-11-27 11:26:55.892825'
+  item: reset slave all;
+  rc: 0
+  start: '2024-11-27 11:26:55.880664'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:56,138 p=669745 u=root n=ansible | changed: [node02] => (item=reset slave all;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-a89f-4cae-987b-823232a3d16b/socket/mysql.sock -e "reset slave all;"
+  delta: '0:00:00.015068'
+  end: '2024-11-27 11:26:56.040537'
+  item: reset slave all;
+  rc: 0
+  start: '2024-11-27 11:26:56.025469'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:56,141 p=669745 u=root n=ansible | changed: [node03] => (item=reset slave all;) => changed=true 
+  ansible_loop_var: item
+  cmd: ./mysql -uroot -p'!QAZ21wsx' -S/ansible_cluster/mysqldata/16315fff-1e5d-4ecd-9ca5-5d4650393237/socket/mysql.sock -e "reset slave all;"
+  delta: '0:00:00.011826'
+  end: '2024-11-27 11:26:56.039995'
+  item: reset slave all;
+  rc: 0
+  start: '2024-11-27 11:26:56.028169'
+  stderr: 'mysql: [Warning] Using a password on the command line interface can be insecure.'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-27 11:26:56,177 p=669745 u=root n=ansible | PLAY [Apply zookeeper role] ******************************************************************************************************************************************************
+2024-11-27 11:26:56,242 p=669745 u=root n=ansible | PLAY [Apply greatdbrouter role] **************************************************************************************************************************************************
+2024-11-27 11:26:56,299 p=669745 u=root n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2024-11-27 11:26:56,300 p=669745 u=root n=ansible | node01                     : ok=14   changed=13   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-11-27 11:26:56,300 p=669745 u=root n=ansible | node02                     : ok=14   changed=13   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-11-27 11:26:56,300 p=669745 u=root n=ansible | node03                     : ok=14   changed=13   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   

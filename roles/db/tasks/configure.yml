@@ -1,0 +1,56 @@
+---
+- name: Check DB connection
+  shell: 
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{ db_client }} --no-defaults -uroot  -S'{{ db_socket_dir }}/{{ db_client }}.sock' -e "SELECT 1;"
+  register: db_connection_status
+  until: db_connection_status.rc == 0
+  retries: 5
+  delay: 10
+
+# - name: stop ansible playbook
+#   fail:
+#     msg: "Check db connection fail!!!"
+#   when: db_connection_status.rc != 0
+  
+- name: Alter root@localhost password 
+  # become: yes
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{ db_client }}admin -u root -S{{ db_socket_dir }}/{{ db_client }}.sock password '{{ db_root_local_password }}'
+  # when: db_root_local_password is defined and db_connection_status.rc == 0
+
+- name: Create DB users using socket authentication
+  # become: yes
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{ db_client }} -uroot -p'{{ db_root_local_password }}' -S'{{ db_socket_dir }}'/{{ db_client }}.sock -e "{{ item }}"
+  loop:
+    - create user 'root'@'%' identified with '{{ db_password_plugin }}' by '{{ db_root_password }}';
+    - grant all on *.* to 'root'@'%' with grant option;
+    - create user '{{ router_super_admin_user }}'@'%' identified with '{{ db_password_plugin }}' by '{{ router_super_admin_password }}';
+    - grant all on *.* to '{{ router_super_admin_user }}'@'%' with grant option;
+    - create user '{{ router_admin_user }}'@'%' identified with '{{ db_password_plugin }}' by '{{ router_admin_password }}';
+    - grant all on *.* to '{{ router_admin_user }}'@'%' with grant option;
+    - create user if not exists '{{ db_rep_default_user }}'@'%' identified with '{{ db_password_plugin }}' by '{{ db_rep_default_password }}';
+    - grant replication slave on *.* to '{{ db_rep_default_user }}'@'%';
+
+
+# 默认没有db_python模块，使用上述shell模块执行
+# - name: Create db users using socket authentication
+#   mysql_user:
+#     name: "{{ item.name }}"
+#     password: "{{ item.password }}"
+#     host: "{{ item.host }}"
+#     priv: "{{ item.priv }}"
+#     state: present
+#     login_user: root
+#     login_unix_socket: "{{ db_socket_dir }}/{{ db_client }}.sock"
+#     login_password: "{{ db_root_local_password }}"
+#   loop:
+#     - { name: 'root', password: '{{ db_root_password }}',host: '%', priv: '*.*:ALL,GRANT' }
+#     - { name: '{{ router_super_admin_user }}', password: '{{ router_super_admin_password }}',host: '%',priv: '*.*:ALL,GRANT' }
+#     - { name: '{{ router_admin_user }}', password: '{{ router_admin_password }}',host: '%',priv: '*.*:ALL,GRANT' }
+#     - { name: '{{ db_rep_default_user }}', password: '{{ db_rep_default_password }}',host: '%',priv: '*.*:ALL,GRANT' }
+
+#   when: item.name is defined and item.password is defined

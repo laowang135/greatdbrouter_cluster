@@ -1,0 +1,8 @@
+---
+# 引入db环境变量，router依赖db客户端
+- name: Include db default variables
+  include_vars:
+    file: roles/db/defaults/main.yml
+- import_tasks: dir.yml
+- import_tasks: install_kazoo.yml
+- import_tasks: configure.yml

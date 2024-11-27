@@ -1,0 +1,68 @@
+---
+- name: Create dir for router
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ router_install_user }}"
+    group: "{{ router_install_group }}"
+    mode: 0755
+  with_items:
+    - "{{ base_dir }}"
+    - "{{ router_app_dir }}"
+    - "{{ router_base_dir }}"
+    - "{{ router_conf_dir }}"
+    - "{{ router_log_dir }}"
+
+- name: Get  glibc version
+  shell: ldd --version | head -n 1 | awk '{print $NF}'
+  register: glibc_version_output
+  when: router_package_glibc is not defined  or router_package_glibc == '' 
+
+- name: Set router_package_glibc variable
+  set_fact:
+    router_package_glibc: "{{ glibc_version_output.stdout }}"
+    glibc_version_matched: true
+  when: router_package_glibc is not defined  or router_package_glibc == '' 
+
+- name: Check glibc version 
+  fail:
+    msg: "不支持的 glibc 版本：{{ router_package_glibc }} ,仅支持 2.17 或 2.28。"
+  when: router_package_glibc not in ['2.17', '2.28']
+
+- name: Copy router_package to install_tmpdir
+  copy:
+    src: "{{ router_package_name }}"
+    dest: "{{ install_tmpdir }}/"
+    owner: "{{ router_install_user }}"
+    group: "{{ router_install_group }}"
+  when: glibc_version_matched | default(false)
+
+- name: Extract router_package  to router_base_dir
+  unarchive:
+    src: "{{ install_tmpdir }}/{{ router_package_name }}"
+    dest: "{{ router_base_dir }}/"
+    remote_src: true
+    owner: "{{ router_install_group }}"
+    group: "{{ router_install_group }}"
+    extra_opts:
+      - --strip-components=1
+
+- name: Modify daemon file.
+  replace:
+    path: "{{ router_base_dir }}/daemon/dbscale_daemon.py"
+    mode: +x
+    regexp: 'mysql'
+    replace: '{{ db_bin_dir }}./{{db_client}}'
+
+- name: Modify daemon file.
+  replace:
+    path: "{{ router_base_dir }}/daemon/dbscale_daemon.py"
+    mode: +x
+    regexp: '-p{p}'
+    replace: "-p'{p}'"
+
+
+
+
+

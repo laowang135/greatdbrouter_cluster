@@ -1,0 +1,25 @@
+---
+- name: "rpm -q firewalld"
+  become: yes
+  command:
+    cmd: rpm -q firewalld
+  register: firewalld_check
+  ignore_errors: true
+  when:
+    - ansible_os_family == 'RedHat' or '"Kylin" in ansible_os_family'
+
+- name: Disable firewalld
+  become: yes
+  service:
+    name: "firewalld"
+    enabled: no
+    state: stopped
+  when:
+    - ansible_os_family == 'RedHat' or '"Kylin" in ansible_os_family'
+    - firewalld_check.rc == 0
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+[main]
+supreme-admin-user = {{ router_super_admin_user }}
+admin-user = {{ router_admin_user }}
+admin-password = {{ router_admin_password | b64encode  }}
+cluster-user = {{ router_admin_user }}
+cluster-password = {{ router_admin_password | b64encode  }}
+dbscale-internal-user = {{ router_admin_user }}
+log-file = {{ router_log_dir }}/dbscale.log
+node-host-addr = {{ ansible_host }}
+pid-file = {{ router_base_dir }}/dbscale.pid
+zk-log-file = {{ router_log_dir }}/zookeeper.log
+transparent-mode = {{ transparent_mode }}
+max-conn-limit = {{ 500 if transparent_mode == 1 else 2000 }}
+# 6192版本以后增加参数
+# ticbase-version = 2.3.3.0
+# max-transparent-conn-num = {{ 2000 if transparent_mode == 1 else 500 }}
+# dbscale-ignore-user = "root,{{ router_super_admin_user }},{{ router_admin_user }},monitor_user"
+driver = mysql
+allow-dot-in-ident = 0
+allow-modify-server-directly = 1
+authenticate-source = normal_0
+authenticate-with-pool-conn = 0
+auto-master-failover-flashback = 1
+auto-space-level = 0
+auto-start-io-thread = 1
+backend-sql-net-timeout = 60
+backlog = 10000
+catch-sigsegv = 1
+check-auto-increment-value = 0
+close-load-conn = 1
+conn-always-set-session-var = 1
+conn-pool-num = 1
+connect-timeout = 2
+connection-pool-admin-interval = 60
+cross-node-join-method = 0
+cursor-use-free-conn = 0
+datasource-in-one = 1
+dbscale-acl-strict-mode = 0
+dbscale-cluster-id = 3305
+dbscale-hosts = %
+dbscale-master-rescramble-delay = 1
+dbscale-safe-sql-mode = 1
+dbscale-trx-strict-mode = 0
+default-login-schema = information_schema
+default-session-variables = character_set_database:transaction_read_only
+disable-parallel-modify = 0
+do-audit-log = NONE
+do-auth-on-dbscale = 0
+enable-acl = 1
+enable-last-insert-id = 1
+enable-multiple-stmt-check = 0
+enable-node-follower = 0
+enable-oracle-sequence = 0
+enable-session-swap = 0
+enable-silent-execute-prepare = 0
+enable-session-get-max-inc-value = 0
+enable-session-swap-during-execution = 1
+enable-simplified-float-number = 1
+enable-ssl = 0
+enable-super-readonly-on-slave = 1
+enable-xa-transaction = 0
+encode-password = 1
+force-execute-partial-set = 0
+get-connection-retry-times = 2
+hash-method-cs = 0
+insert-select-sql-size = 65536
+load-analysis-num = 3
+log-level = INFO
+lower-case-table-names = 1
+max-connect-by-result-num = 100000
+max-connection-cleanup-number = 100
+max-cross-join-moved-rows = 10000
+max-dataserver-monitor = 6
+max-federated-cross-join-rows = 10000
+max-fetchnode-ready-rows-size = 10000
+max-load-analysis-wait-size = 12
+max-load-once-packet-num = 0
+max-load-packet-size = 16777216
+max-load-ready-packets = 64
+max-mergenode-ready-rows-size = 2000000
+max-replication-delay = 300
+max-replication-delay-potential-master = 10000000
+max-single-sort-rows = 1000000
+max-slave-retrived-binlog-pos-delay = 1073741824
+max-slave-retrived-binlog-pos-delay-for-wakeup = 10000000
+max-slave-retrived-gtid-delay = 1000000
+max-wise-group-size = 100000000
+migrate-method = 1
+migrate-write-packet-size = 16777216
+migrate-write-thread = 10
+auto-increment-range-value = 100000
+monitor-net-timeout = 1
+monitor-retry-count = 2
+monitor-retry-count-stable = 2
+monitor-interval = 2
+mul-dbscale-forward-timeout = 10
+multiple-mode = 1
+on-view = 0
+record-auto-increment-delete-value = 0
+restrict-create-table = 0
+restrict-auth-source-topo = 0
+support-log-warning-info = 1
+support-show-warning = 1
+support-tokudb = 0
+tcp-keepcnt =  3
+tcp-keepidle =1
+tcp-keepintvl =1
+tcp-user-timeout =6000
+thread-pool-low = 200
+thread-pool-max = 4000
+thread-pool-min = 30
+unexpected-gtid-threshold-value = 5
+update-delete-quick-limit = 0
+use-alias-host = 0
+use-load-data-for-insert-select = 0
+use-partial-parse = 1
+use-spark = 0
+use-table-for-one-column-subquery = 1
+wait-timeout = 172800
+zookeeper-check-retry = 600
+zookeeper-user= dbscale
+zookeeper-password = ZGJzY2FsZQ==
+zookeeper-host = {% for host in groups['all'] %}{{ hostvars[host]['ansible_host'] }}:{{ zookeeper_port }}{% if not loop.last %},{% endif %}{% endfor %}
+
+
+
+[driver mysql]
+transparent-port = {{ transparent_port }}
+bind-address = 0.0.0.0
+port = {{ router_port }}
+type = MySQLDriver
+
+[catalog default]
+data-source = normal_0
+
+[data-source normal_0]
+group-id = 100
+user =  {{ router_admin_user }}
+password = {{ router_admin_password | b64encode  }}
+type = replication
+semi-sync-on = 1
+load-balance-strategy = MASTER
+{% for host in (ansible_play_hosts | map('extract', hostvars, 'ansible_host') | sort) %}
+{% set label = 'normal_0_' + loop.index0|string %}
+{% if loop.first %}
+master = {{ label }}-1-1000-400-800
+{% else %}
+slave = {{ label }}-1-1000-400-800
+{% endif %}
+{% endfor %}
+
+{% for host in (ansible_play_hosts | map('extract', hostvars, 'ansible_host') | sort) %}
+{% set label = 'normal_0_' + loop.index0|string %}
+[data-server {{ label }}]
+host         = {{ host }}
+port         = {{ db_port }}
+user         = {{ router_admin_user }}
+password     = {{ router_admin_password | b64encode  }}
+remote-user  = root
+remote-port  = 22
+{% endfor %}

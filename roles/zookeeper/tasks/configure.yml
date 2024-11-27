@@ -1,0 +1,17 @@
+---
+- name: Copy zookeeper config to  zookeeper_conf_dir
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ zookeeper_install_user }}"
+    group: "{{ zookeeper_install_user }}"
+  loop:
+    - { src: zoo.cfg.j2 , dest: "{{ zookeeper_conf_dir }}/zoo.cfg" }
+    - { src: zoo.cfg.dynamic.100000000.j2 , dest: "{{ zookeeper_conf_dir }}/zoo.cfg.dynamic.100000000" }
+  when: zookeeper_port is defined
+
+# myid
+- name: Set zookeeper myid
+  shell:
+    cmd: "grep {{ ansible_host }}  {{ zookeeper_conf_dir }}/zoo.cfg.dynamic.100000000 | awk -F'[.=]' '{print $2}' > {{ zookeeper_data_dir }}/myid"
+  when: zookeeper_port is defined

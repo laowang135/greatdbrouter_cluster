@@ -1,0 +1,11 @@
+---
+- name: Systemctl daemon-reload
+  become: yes
+  shell:
+    cmd: systemctl daemon-reload
+
+- name: Enabled service
+  become: yes
+  shell:
+    cmd: "systemctl enable {{ service_name }}"
+

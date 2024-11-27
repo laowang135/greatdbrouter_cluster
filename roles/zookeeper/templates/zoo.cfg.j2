@@ -1,0 +1,12 @@
+tickTime=6000
+initLimit=5
+syncLimit=2
+autopurge.purgeInterval=120
+autopurge.snapRetainCount=10
+4lw.commands.whitelist=*
+
+dataDir={{ zookeeper_data_dir }}
+reconfigEnabled=true
+admin.enableServer=false
+standaloneEnabled=false
+dynamicConfigFile={{ zookeeper_conf_dir }}/zoo.cfg.dynamic.100000000

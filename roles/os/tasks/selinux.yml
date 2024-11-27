@@ -1,0 +1,25 @@
+---
+
+- name: "set selinux disabled"
+  become: yes
+  shell: getenforce
+  register: selinux_check
+  ignore_errors: true
+
+- name: "set selinux disabled"
+  become: yes
+  shell: setenforce 0
+  ignore_errors: true
+  when:
+    - selinux_state == "disabled"
+    - selinux_check.stdout != "Disabled"
+
+- name: set /etc/selinux/config to {{ selinux_state }}
+  become: yes
+  replace:
+    path: /etc/selinux/config
+    regexp: '^SELINUX=.*'
+    replace: 'SELINUX={{ selinux_state }}'
+  ignore_errors: true
+  when:
+    - selinux_state == "disabled"

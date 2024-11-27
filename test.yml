@@ -1,0 +1,92 @@
+---
+- name: Apply mysql role
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: get  glibc version
+      shell: ldd --version | head -n 1 | awk '{print $NF}'
+      register: glibc_version_output
+      when: router_package_glibc is not defined  or router_package_glibc == '' 
+
+    # - name: Get dbscale white list info
+    #   shell:
+    #     chdir: /ansible_cluster_data/app/mysql-8.0.36/bin/
+    #     cmd: ./mysql -u{{ router_admin_user }} -p'{{ router_admin_password }}' -h127.0.0.1 -P{{ router_port }} -e "dbscale show white list;"
+    #   register: dbscale_white_list_info
+
+    # - name: Check zookeeper dbscale node info
+    #   fail:
+    #     msg: "{{ router_super_admin_user }}  not in dbscale white list!!!"
+    #   when: router_super_admin_user not in dbscale_white_list_info.stdout
+    
+    # - name: Check zookeeper role info
+    #   shell: 
+    #     chdir: /ansible_cluster_data/app/zookeeper-3.8.3/bin
+    #     cmd: ./zkServer.sh status |grep -i mode
+    #   register: zookeeper_role
+    #   until: zookeeper_role.rc == 0
+    #   retries: 5
+    #   delay: 1
+
+    # - name: Check zookeeper role info
+    #   shell: echo {{ inventory_hostname  }}
+      
+    # - name:  set router_package_glibc variable
+    #   set_fact:
+    #     router_package_glibc: "{{ glibc_version_output.stdout }}"
+    #     glibc_version_matched: true
+    #   when: router_package_glibc is not defined  or router_package_glibc == '' 
+
+    # - name: Copy dbscale.conf.j2 template
+    #   become: yes
+    #   template:
+    #     src: /root/ticbase-wy/dbscale.conf.j2
+    #     dest: "./dbscale.conf"
+
+    # - name: check glibc version 
+    #   fail:
+    #     msg: "不支持的 glibc 版本：{{ router_package_glibc }} ,仅支持 2.17 或 2.28。"
+    #   when: router_package_glibc not in ['2.17', '2.28']
+    - name: Include db default variables
+      include_vars:
+        file: /root/github/ticbase-ansible/roles/zookeeper/defaults/main.yml
+    # - name: Include db default variables
+    #   include_vars:
+    #     file: /root/github/ticbase-ansible/roles/db/defaults/main.yml
+    - name: Check zookeeper role info
+      shell: 
+        chdir: "{{ zookeeper_bin_dir }}"
+        cmd: ./zkServer.sh status |grep -i mode
+      register: zookeeper_role
+      until: zookeeper_role.rc == 0
+      retries: 10
+      delay: 5
+
+    - name: Print multiple variables
+      debug:
+        msg: "{{ item.name }}: {{ item.value }}"
+      loop:
+        # - { name: 'percona_xtrabackup_package_name', value: "{{ percona_xtrabackup_package_name | default('not defined') }}" }
+        - { name: 'router_package_glibc', value: "{{ router_package_glibc | default('not defined') }}" }
+        - { name: 'passwd', value: "{{ '!QAZ2wsx' | b64encode  }}" }
+        - { name: 'db_version', value: "{{ db_version }}" }
+        - { name: 'db_app_base_dir', value: "{{ db_app_base_dir }}" }
+        - { name: 'db_dbdata_dir', value: "{{ db_dbdata_dir }}" }
+        - { name: 'db_conf_dir', value: "{{ db_conf_dir }}" }
+        - { name: 'db_data_dir', value: "{{ db_data_dir }}" }
+        - { name: 'db_log_dir', value: "{{ db_log_dir }}" }
+        - { name: 'replica_variables_name', value: "{{ replica_variables_name }}" }
+        # - { name: 'host_memtotal_mb', value: "{{ host_memtotal_mb | default('not defined') }}" }
+        # - { name: 'host_processor_cpus', value: "{{ host_processor_cpus | default('not defined') }}" }
+    # add JAVA_HOME to /etc/profile
+    # - name: Add MySQL env variables to /etc/profile
+    #   become: yes
+    #   blockinfile:
+    #     dest: /etc/profile
+    #     block: |
+    #       export MYSQL_PS1="[\\U:\\p \\R:\\m:\\s(\\d)]$ "
+    #       export PATH="{{ mysql_bin_dir }}:$PATH"
+    #     marker: "# {mark} MySQL environment variables"
+    #     state: present
+
+

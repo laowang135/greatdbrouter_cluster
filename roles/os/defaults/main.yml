@@ -1,0 +1,14 @@
+---
+
+selinux_state: disabled
+swap_state: 0
+
+dns_servers:
+  - 114.114.114.114
+  - 8.8.8.8
+sed_etc_hosts: True
+sed_etc_hostname: True
+set_etc_resolv_conf: True
+
+coredump_dir: "{{ base_dir }}/coredump"
+

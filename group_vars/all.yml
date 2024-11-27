@@ -1,0 +1,39 @@
+---
+
+# 默认独享主机配置,参数根据配置自动计算,若需配置低于实际主机配置参数,则输入配置信息,CPU单位为核数,内存单位为MB。
+host_processor_cpus_default: ""
+host_memtotal_mb_default: ""
+
+# 一般来说，设置为总 RAM 的 50% – 70% 
+innodb_buffer_pool_size: "{{ ( host_memtotal_mb | int * 0.5 ) | int  }}"
+
+# 若配置了主机资源信息，则使用配置的信息，否则独享主机配置，通过ansible获取信息进行计算
+host_processor_cpus: "{{ ansible_processor_vcpus if ( host_processor_cpus_default is not defined ) or ( host_processor_cpus_default == '' ) else host_processor_cpus_default }}"
+host_memtotal_mb: "{{ ansible_memtotal_mb if ( host_memtotal_mb_default is not defined ) or ( host_memtotal_mb_default == '' ) else host_memtotal_mb_default }}"
+
+# cpu架构，默认由ansible进行匹配，若匹配失效，可手动修改自定义变量 cpu_architectur 为 'x86_64' 或者 'aarch64'
+cpu_architectur: "{{ 'x86_64' if ansible_architecture == 'x86_64' else 'aarch64' if ansible_architecture == 'aarch64' else 'None' }}" 
+# cpu_architectur: "x86_64"
+# ARM_package_cpu_architecture: "{{ 'amd64' if cpu_architectur == 'x86_64' else 'arm64' if cpu_architectur == 'aarch64' else 'None' }}"
+Intel_package_cpu_architecture: "{{ 'x86_64' if cpu_architectur == 'x86_64' else 'aarch64' if cpu_architectur == 'aarch64' else 'None' }}"
+# db安装包默认使用glibc 2.17 版本, router 安装包默认会根据远程机进行判断选择，若需要自定义，则编辑 router_package_glibc_default 变量，否则保持为空即可
+db_package_glibc: "2.17"
+router_package_glibc: ""
+
+# 默认安装包名称格式，ansible 根据 cpu 架构自动选择安装包
+jdk_package_name_default: "jdk-{{ jdk_version }}-linux-{{ Intel_package_cpu_architecture }}.tar.gz"
+db_package_name_default: "{{ db_client }}-{{ db_version }}-linux-glibc{{ db_package_glibc }}-{{ Intel_package_cpu_architecture }}.tar.gz"
+router_package_name_default: "GreatDBRouter-{{ router_version }}-Linux-glibc{{ router_package_glibc }}-{{ Intel_package_cpu_architecture }}.tar.gz"
+percona_xtrabackup_package_name_default: "percona-xtrabackup-{{ percona_xtrabackup_version }}-linux-glibc{{ db_package_glibc }}-{{ Intel_package_cpu_architecture }}.tar.gz"
+zookeeper_package_name_default: "zookeeper-{{ zookeeper_version }}.tar.gz"
+# 若用户定义了安装包名称 则使用inventory.yml文件中定义的 *_package_name_default 变量值
+jdk_package_name: "{{ jdk_package_name_default if ( jdk_package_name_defined is not defined ) or ( jdk_package_name_defined == '' ) else jdk_package_name_defined }}"
+db_package_name: "{{ db_package_name_default if ( db_package_name_defined is not defined ) or ( db_package_name_defined == '' ) else db_package_name_defined }}"
+router_package_name: "{{ router_package_name_default if ( router_package_name_defined is not defined ) or ( router_package_name_defined == '' ) else router_package_name_defined }}"
+percona_xtrabackup_package_name: "{{ percona_xtrabackup_package_name_default if ( percona_xtrabackup_package_name_defined is not defined ) or ( percona_xtrabackup_package_name_defined == '' ) else percona_xtrabackup_package_name_defined }}"
+zookeeper_package_name: "{{ zookeeper_package_name_default if ( zookeeper_package_name_defined is not defined ) or ( zookeeper_package_name_defined == '' ) else zookeeper_package_name_defined }}"
+# db root socket 用户信息，默认继承root密码
+db_root_local_password: "{{ db_root_password }}"
+# db 复制用户信息，默认继承 router_admin_user 用户信息
+db_rep_default_user: "{{ router_admin_user }}"
+db_rep_default_password: "{{ router_admin_password }}"

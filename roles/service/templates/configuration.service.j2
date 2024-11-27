@@ -1,0 +1,24 @@
+# Created by ansible
+[Unit]
+Description=zookeeper
+After=network.target
+
+[Service]
+Type=forking
+User={{ zookeeper_install_user  }}
+Group={{ zookeeper_install_group }}
+
+ExecStart={{ zookeeper_bin_dir }}/zkServer.sh start
+ExecStop={{ zookeeper_bin_dir }}/zkServer.sh stop
+PIDFile={{ zookeeper_data_dir }}/zookeeper_server.pid
+KillMode=process
+
+Restart=always
+RestartSec=10
+StartLimitInterval=10
+StartLimitBurst=6
+RestartPreventExitStatus=SIGTERM SIGKILL
+
+[Install]
+WantedBy=multi-user.target
+

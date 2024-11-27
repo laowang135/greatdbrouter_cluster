@@ -1,0 +1,7 @@
+---
+
+- name: execute sysctl -p
+  become: yes
+  ansible.builtin.command:
+    cmd: sysctl -p
+

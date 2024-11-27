@@ -1,0 +1,5 @@
+---
+# tasks file for DB
+- import_tasks: deploy.yml
+- import_tasks: configure.yml
+- import_tasks: replication.yml

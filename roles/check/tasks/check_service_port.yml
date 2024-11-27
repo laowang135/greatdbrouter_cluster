@@ -1,0 +1,11 @@
+---
+- name: Check whether the port is in used
+  become: yes
+  shell:
+    cmd: "lsof -i:{{ service_port }} | wc -l"
+  register: check_service_port
+
+- name: The port is in used
+  fail:
+    msg: "port: {{ service_port }}  is used"
+  when: check_service_port.stdout != '0'

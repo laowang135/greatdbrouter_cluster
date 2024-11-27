@@ -1,0 +1,34 @@
+---
+# jdk 进程用户以及用户组信息
+jdk_install_user: "{{ ansible_user }}"
+jdk_install_group: "{{ ansible_user }}"
+# jdk 数据目录信息
+jdk_base_dir: "{{ base_dir }}/jdk{{ '' if (jdk_version is not defined) or (jdk_version == '') else '-' + jdk_version }}"
+java_home: "{{ jdk_base_dir }}"
+
+# defaults port for zookeeper
+zookeeper_election_port: "2888"
+zookeeper_communication_port: "3888"
+
+# zookeeperbase dir
+zookeeper_app_dir: "{{ base_dir }}/app"
+zookeeper_app_base_dir: "{{ zookeeper_app_dir }}/zookeeper{{ '' if (zookeeper_version is not defined) or (zookeeper_version == '') else '-' + zookeeper_version }}"
+zookeeper_bin_dir: "{{ zookeeper_app_base_dir }}/bin"
+
+# zookeeperdata dir
+zookeeper_base_dir: "{{ base_dir }}/zookeeperdata"
+zookeeper_conf_dir: "{{ zookeeper_base_dir }}/conf"
+zookeeper_data_dir: "{{ zookeeper_base_dir }}/data"
+zookeeper_log_dir: "{{ zookeeper_base_dir }}/log"
+
+# zookeeper 安装用户信息
+zookeeper_install_user: "{{ ansible_user }}"
+zookeeper_install_group: "{{ ansible_user }}"
+
+# zookeeper 日志保留信息
+# 是否开启日志滚动，默认打开
+zookeeper_log_rollingfile: "ON"
+# zookeeper日志文件最大值
+zookeeper_log_maxfilesize: "1MB"
+# zookeeper文件最大保留数
+zookeeper_log_maxbackupindex: "3"

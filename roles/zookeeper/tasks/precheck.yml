@@ -1,0 +1,48 @@
+---
+- name: Create dir for zookeeper
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  with_items:
+    - "{{ zookeeper_app_dir }}"
+    - "{{ zookeeper_app_base_dir }}"
+    - "{{ zookeeper_base_dir }}"
+    - "{{ zookeeper_conf_dir }}"
+    - "{{ zookeeper_data_dir }}"
+    - "{{ zookeeper_log_dir }}"
+    - "{{ install_tmpdir }}"
+
+- name: Copy zookeeper_package to install_tmpdir
+  copy:
+    src: "{{ zookeeper_package_name }}"
+    dest: "{{ install_tmpdir }}/"
+    owner: "{{ zookeeper_install_user }}"
+    group: "{{ zookeeper_install_group }}"
+  # when: glibc_version_matched | default(false)
+
+- name: Extract zookeeper_package to zookeeper_app_base_dir
+  unarchive:
+    src: "{{ install_tmpdir }}/{{ zookeeper_package_name }}"
+    dest: "{{ zookeeper_app_base_dir }}/"
+    remote_src: true
+    owner: "{{ zookeeper_install_user }}"
+    group: "{{ zookeeper_install_group }}"
+    extra_opts:
+      - --strip-components=1
+  when: zookeeper_package_name is defined
+
+- name: Add env variables to zkEnv.sh
+  blockinfile:
+    dest: "{{zookeeper_bin_dir}}/zkEnv.sh"
+    insertafter: "#!/usr/bin/env"
+    block: |
+      JAVA_HOME="{{ java_home }}"
+      ZOOCFGDIR="{{ zookeeper_conf_dir }}"
+      ZOO_LOG_DIR="{{ zookeeper_log_dir }}"
+      #ZOO_LOG4J_PROP="INFO,ROLLINGFILE"
+    marker: "# {mark} ZOOKEEPER environment variables"
+    state: present

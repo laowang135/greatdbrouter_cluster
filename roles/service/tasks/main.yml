@@ -1,0 +1,21 @@
+# tasks file for DB
+- import_tasks: include_role_variables.yml
+
+- name: Include tasks for checking_service files
+  include_tasks: check_service_file.yml
+  vars:
+    jinja_file_name: "{{ item.jinja_file_name }}"
+    service_name: "{{ item.service_name }}"
+  loop:
+    - { jinja_file_name: db.service.j2 ,service_name: "{{ db_service_name }}" }
+    - { jinja_file_name: configuration.service.j2 ,service_name: "{{ zookeeper_service_name }}" }
+    - { jinja_file_name: scheduler.service.j2 ,service_name: "{{ greatdbrouter_service_name }}" }
+
+- name: Include tasks for enable_service files
+  include_tasks: enable_service.yml
+  vars:
+    service_name: "{{ item }}"
+  loop:
+    - "{{ db_service_name }}" 
+    - "{{ zookeeper_service_name }}" 
+    - "{{ greatdbrouter_service_name }}" 

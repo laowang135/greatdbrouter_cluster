@@ -1,0 +1,29 @@
+---
+# dbbase dir
+db_app_dir: "{{ base_dir }}/app"
+# ~ 运算符用于字符串拼接
+db_app_base_dir: "{{ db_app_dir }}/{{ db_client if (db_version is not defined) or (db_version == '') else db_client + '-' + db_version }}"
+db_bin_dir: "{{ db_app_base_dir }}/bin"
+
+# xtrabackup dir 
+xtrabackup_base_dir: "{{ base_dir }}/xtrabackup"
+
+# dbdata dir
+db_dbdata_dir: "{{ base_dir }}/{{ db_client }}data"
+db_conf_dir: "{{ db_dbdata_dir }}/{{ db_uuid.stdout }}"
+db_data_dir: "{{ db_conf_dir }}/dbdata"
+db_log_dir: "{{ db_conf_dir }}/logfile"
+db_tmp_dir: "{{ db_conf_dir }}/tmp"
+db_pid_dir: "{{ db_conf_dir }}/pid"
+db_socket_dir: "{{ db_conf_dir }}/socket"
+
+# db 安装用户信息
+db_install_user: "{{ ansible_user }}"
+db_install_group: "{{ ansible_user }}"
+
+# db password plugin
+db_password_plugin: "mysql_native_password"
+
+
+# greatdb 不识别replica_xxx相关参数，需要使用slave_xxxx
+replica_variables_name: "{{ 'replica' if  db_client == 'mysql' else 'slave' }}"

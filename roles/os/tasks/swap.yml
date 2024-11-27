@@ -1,0 +1,18 @@
+---
+
+- name: swapoff
+  become: yes
+  shell: swapoff -a
+  when: swap_state == 0
+  ignore_errors: true
+
+- name: romove swap from /etc/fstab
+  become: yes
+  lineinfile:
+    dest: /etc/fstab
+    regexp: "swap"
+    state: absent
+  when: swap_state == 0
+
+
+

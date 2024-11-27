@@ -1,0 +1,15 @@
+---
+
+- include_tasks: limits.yml
+- include_tasks: firewall.yml
+- include_tasks: dir.yml
+- include_tasks: selinux.yml
+- include_tasks: timezone.yml
+- include_tasks: lang.yml
+
+
+
+
+
+
+

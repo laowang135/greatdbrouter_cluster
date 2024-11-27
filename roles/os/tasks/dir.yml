@@ -1,0 +1,19 @@
+---
+
+- name: Create base_dir tmpdir directory
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_group }}"
+    mode: 0755
+  when:
+    - install_tmpdir is defined
+    - base_dir is defined
+  loop:
+    - "{{ base_dir }}"
+    - "{{ install_tmpdir }}"
+
+
+

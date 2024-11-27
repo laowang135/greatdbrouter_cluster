@@ -1,0 +1,89 @@
+---
+- name: Start zookeeper service
+  shell: 
+    chdir: "{{ zookeeper_bin_dir }}"
+    cmd: ./zkServer.sh start
+
+- name: Check zookeeper role info
+  shell: 
+    chdir: "{{ zookeeper_bin_dir }}"
+    cmd: ./zkServer.sh status |grep -i mode
+  register: zookeeper_role
+  until: zookeeper_role.rc == 0
+  retries: 10
+  delay: 5
+
+# - name: stop ansible playbook
+#   fail:
+#     msg: "Check zookeeper leader fail!!!"
+#   when: zookeeper_role.rc != 0
+
+- name: Init zookeeper for router
+  shell: 
+    chdir: "{{ zookeeper_bin_dir }}"
+    cmd: |
+      ./zkCli.sh -server 127.0.0.1:{{ zookeeper_port }} <<EOF
+      create /dbscale "" 
+      create /dbscale/cluster "" 
+      create /dbscale/keepalive "" 
+      create /dbscale/dynamic_operation "" 
+      create /dbscale/configuration "" 
+      create /dbscale/cluster/nodes "" 
+      create /dbscale/cluster/online_nodes "" 
+      create /dbscale/keepalive/keepalive_init_info "" 
+      create /dbscale/keepalive/keepalive_update_info "" 
+      create /dbscale/keepalive/mul_sync_info "" 
+      create /dbscale/dynamic_operation/dynamic_operation_info "" 
+      create /dbscale/dynamic_operation/dynamic_cluster_management_info "" 
+      create /dbscale/dynamic_operation/dynamic_cluster_management_init_info "" 
+      create /dbscale/dynamic_operation/dynamic_config_info "" 
+      create /dbscale/dynamic_operation/session_info "" 
+      create /dbscale/dynamic_operation/block_info "" 
+      create /dbscale/configuration/master_config_info "" 
+      create /dbscale/configuration/changed_config_info ""
+      addauth digest dbscale:dbscale
+      quit
+      EOF
+  when: "'leader' in zookeeper_role.stdout"
+
+- name: Get zookeeper node info
+  shell: 
+    chdir: "{{ zookeeper_bin_dir }}"
+    cmd: |
+      ./zkCli.sh -server 127.0.0.1:{{ zookeeper_port }} <<EOF
+      addauth digest dbscale:dbscale
+      ls /
+      quit
+      EOF
+  register: zookeeper_nodes
+
+- name: Check zookeeper dbscale node info
+  fail:
+    msg: "dbscale node not exist!!!"
+  when: "'dbscale' not in zookeeper_nodes.stdout"
+
+
+
+# - name: Init zookeeper for router
+#   shell:
+#     cmd: |
+#       echo 'create /dbscale "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/cluster ""  ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/keepalive "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/configuration "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/cluster/nodes "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/cluster/online_nodes "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/keepalive/keepalive_init_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/keepalive/keepalive_update_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/keepalive/mul_sync_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/dynamic_operation_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/dynamic_cluster_management_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/dynamic_cluster_management_init_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/dynamic_config_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/session_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/dynamic_operation/block_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/configuration/master_config_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'create /dbscale/configuration/changed_config_info "" ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#       echo 'addauth digest dbscale:dbscale ' |{{ zookeeper_bin_dir }}/zkCli.sh -server 127.0.0.1:{{ zookeeper_port }}
+#   when: zookeeper_role.rc == 0

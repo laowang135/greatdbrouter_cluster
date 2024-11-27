@@ -1,0 +1,14 @@
+---
+# defaults file for router
+
+#  ROUTER 安装用户信息
+router_install_user: "{{ ansible_user }}"
+router_install_group: "{{ ansible_user }}"
+
+# router dir info
+router_app_dir: "{{ base_dir }}/app"
+router_base_dir: "{{ router_app_dir }}/dbscale"
+router_conf_dir: "{{ router_base_dir }}"
+router_log_dir: "{{ base_dir }}/dbscalelog"
+
+kazoo_package: python-kazoo-2.0-2.el7.noarch.rpm

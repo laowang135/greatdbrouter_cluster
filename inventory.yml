@@ -1,0 +1,45 @@
+all:
+  hosts:
+    node01:
+      ansible_host: 172.17.134.17
+    node02:
+      ansible_host: 172.17.134.23
+    node03:
+      ansible_host: 172.17.134.24
+  vars:
+    ansible_user: 'greatdb'
+    ansible_password: 'wang123.com'
+    ansible_port: 22
+    ansible_python_interpreter: /usr/bin/python
+    base_dir: "/ansible_cluster"
+    install_tmpdir: "{{base_dir}}/tmpdir"
+    # port variables 
+    db_port: "16315"
+    router_port: "16310"
+    zookeeper_port: "16309"
+    transparent_mode: "1"
+    transparent_port: "23399"
+    jdk_port: "9090"
+    # cluster user info
+    db_root_password: "!QAZ21wsx"
+    router_super_admin_user: "admin"
+    router_super_admin_password: "!QAZ2wsx"
+    router_admin_user: "dbscale_internal"
+    router_admin_password: "!QAZ2wsx"
+    # 组件版本信息,通过默认匹配规则进行包版本匹配
+    # package_version info
+    db_version: "8.0.36"
+    percona_xtrabackup_version: "8.0.35"
+    jdk_version: "8u111"
+    zookeeper_version: "3.8.3"
+    router_version: "6.0.0.6192-LTS-1-102ea9ed"
+    # 若自备安装包不符合默认包名格式，可编辑对应的package_name变量为实际提供的包名，自定义安装包需注意要匹配对应的操作系统，若包名符合默认包名格式则保持变量为空；
+    # package_name info
+    # 示例：   db_package_name_defined: "mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz"
+    db_package_name_defined: ""
+    percona_xtrabackup_package_name_defined: ""
+    jdk_package_name_defined: ""
+    zookeeper_package_name_defined: ""
+    router_package_name_defined: ""
+    # 默认连接db客户端命令，mysql or greatdb
+    db_client: mysql

@@ -1,0 +1,30 @@
+---
+# tasks file for zookeeper
+- import_tasks: jdk.yml
+- import_tasks: precheck.yml
+- import_tasks: logback.yml 
+- import_tasks: configure.yml
+- import_tasks: init.yml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

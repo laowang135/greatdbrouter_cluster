@@ -1,0 +1,57 @@
+---
+- name: Copy dbscale.conf.j2 template
+  become: yes
+  template:
+    src: dbscale.conf.j2
+    dest: "{{ router_conf_dir }}/dbscale.conf"
+    owner: "{{ router_install_user }}"
+    group: "{{ router_install_group }}"
+  when: router_conf_dir is defined
+
+- name: Start dbscale service
+  shell:
+    chdir: "{{ router_base_dir }}"
+    cmd: ./daemon/dbscale_daemon.py
+
+- name: Check dbscale connection
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{db_client}} -u{{ router_admin_user }} -p'{{ router_admin_password }}' -h127.0.0.1 -P{{ router_port }}   -e "SELECT 1;"
+  register: router_connection_status
+  until: router_connection_status.rc == 0
+  retries: 5
+  delay: 10
+
+# - name: stop ansible playbook
+#   fail:
+#     msg: "Check dbscale connection fail!!!"
+#   when: router_connection_status.rc != 0
+
+- name: Add dbscale white list
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{db_client}} -u{{ router_admin_user }} -p'{{ router_admin_password }}' -h127.0.0.1 -P{{ router_port }} -e "{{ item }}"
+  loop:
+    - dbscale dynamic add white to {{ router_super_admin_user }}@'%';
+    - dbscale dynamic add white to {{ router_admin_user }}@'%';
+    - dbscale dynamic add white to root@'%';
+
+- name: Get dbscale white list info
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{db_client}} -u{{ router_admin_user }} -p'{{ router_admin_password }}' -h127.0.0.1 -P{{ router_port }} -e "dbscale show white list;"
+  register: dbscale_white_list_info
+
+- name: Check zookeeper dbscale node info
+  fail:
+    msg: "{{ router_admin_user }}  not in dbscale white list!!!"
+  when: router_admin_user not in dbscale_white_list_info.stdout
+
+- name: Print dbscale info
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{db_client}} -u{{ router_admin_user }} -p'{{ router_admin_password }}' -h 127.0.0.1 -P{{ router_port }} -e "{{ item }}"
+  loop:
+    - dbscale show dataservers; 
+    - dbscale request cluster info;
+    - dbscale show datasource type=replication\G

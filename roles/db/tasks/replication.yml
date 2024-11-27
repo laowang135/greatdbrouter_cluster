@@ -1,0 +1,37 @@
+---
+- name: Reset master and reset slave all
+  shell:
+    chdir: "{{ db_bin_dir }}"
+    cmd: ./{{ db_client }} -uroot -p'{{ db_root_local_password }}' -S{{ db_socket_dir }}/{{ db_client }}.sock -e "{{ item }}"
+  loop:
+    - stop slave;
+    - reset master;
+    - reset slave all;
+  when: 
+    - db_root_local_password is defined
+    - groups['all'] | length > 1
+
+# 以下信息默认由ROUTER维护，部署可以不打开
+# - name: config replication 
+#   shell:
+#     chdir: "{{ db_bin_dir }}"
+#     cmd: ./{{ db_client }} -uroot -p'{{ db_root_local_password }}' -S{{ db_socket_dir }}/{{ db_client }}.sock -e "{{ item }}"
+#   loop:
+#     - change replication source to source_host='{{ hostvars[groups['all'][0]]['ansible_host'] }}',source_port={{ db_port }},source_user='{{ db_rep_default_user }}',source_password='{{ db_rep_default_password }}',source_auto_position=1;
+#     - start slave;
+#     - set global super_read_only = 1;
+#     - set global rpl_semi_sync_slave_enabled=on;
+#   when:
+#     - groups['all'] | length > 1
+#     - ansible_host != hostvars[groups['all'][0]]['ansible_host']
+
+# - name: "set global rpl_semi_sync_master_enabled=on;  on master: hostvars[groups['all'][0]]['ansible_host']"
+#   shell:
+#     chdir: "{{ db_bin_dir }}"
+#     cmd: ./{{ db_client }} -uroot -p'{{ db_root_loacl_password }}' -S{{ db_socket_dir }}/{{ db_client }}.sock -e "{{ item }}"
+#   loop:
+#     - set global rpl_semi_sync_master_enabled=on;
+#   when:
+#     - groups['all'] | length > 1
+#     - ansible_host == hostvars[groups['all'][0]]['ansible_host']
+

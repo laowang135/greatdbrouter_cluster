@@ -1,0 +1,17 @@
+---
+- name: Include zookeeper default variables
+  include_vars:
+    file: roles/zookeeper/defaults/main.yml
+      
+- name: Include tasks for check_service_port files
+  include_tasks: check_service_port.yml
+  vars:
+    service_port: "{{ item }}"
+  loop:
+    - "{{ db_port }}" 
+    - "{{ router_port }}" 
+    - "{{ zookeeper_port }}" 
+    - "{{ transparent_port }}" 
+    - "{{ jdk_port }}" 
+    - "{{ zookeeper_election_port }}" 
+    - "{{ zookeeper_communication_port }}" 

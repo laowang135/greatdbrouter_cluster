@@ -1,0 +1,32 @@
+---
+- name: Check whether the service file exists
+  shell: |
+    if [ -f {{ service_file_dir }}/{{ service_name }}.service ]; then
+      grep -q '# Created by ansible' {{ service_file_dir }}/{{ service_name }}.service || echo "NOT_FOUND_COMMENT"
+    else
+      echo "FILE_NOT_EXISTS"
+    fi
+  register: service_file_check
+  changed_when: false
+  failed_when: false
+
+- name: The service file is exists
+  fail:
+    msg: "The service file {{ service_file_dir }}/{{ service_name }}.service is exists!!! "
+  when:  service_file_check.stdout == "NOT_FOUND_COMMENT"
+
+- name: Overwrite the file using Jinja2 template
+  become: yes
+  template:
+    src: "{{ jinja_file_name }}"
+    dest: "{{ service_file_dir}}/{{ service_name}}.service"
+  when:  service_file_check.stdout != "NOT_FOUND_COMMENT"
+
+- name: Check if the service file exists on the remote server
+  shell:  "ls {{ service_file_dir}}/{{ service_name}}.service"
+  register: service_file_check
+
+- name: Check whether the ansbile created file exists
+  fail:
+    msg: "The service file {{ service_file_dir }}/{{ service_name }}.service is not exists!!! "
+  when:  service_file_check.rc != 0

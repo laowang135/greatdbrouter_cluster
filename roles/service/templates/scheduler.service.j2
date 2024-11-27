@@ -1,0 +1,20 @@
+# Created by ansible
+[Unit]
+Description=dbscale
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User={{ router_install_user }}
+Group={{ router_install_group }}
+WorkingDirectory={{ router_base_dir }}
+ExecStart={{ ansible_python_interpreter }} {{ router_base_dir }}/daemon/dbscale_daemon.py
+ExecStop={{ ansible_python_interpreter }} {{ router_base_dir }}/daemon/dbscale_daemon_stop.py
+PIDFile={{ router_base_dir }}/dbscale.pid
+KillMode=process
+LimitNOFILE=1024000
+LimitNPROC=1024000
+
+[Install]
+WantedBy=multi-user.target

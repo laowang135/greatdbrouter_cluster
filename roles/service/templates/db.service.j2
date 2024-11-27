@@ -1,0 +1,20 @@
+# Created by ansible
+[Unit]
+Description={{ db_client }}d service
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User={{ db_install_user }}
+Group={{ db_install_group }}
+Type=simple
+Environment=
+TimeoutSec=0
+LimitNOFILE = 1024000
+LimitNPROC = 1024000
+PrivateTmp=false
+# Restart=on-failure
+ExecStart={{ db_bin_dir }}/{{ db_client }}d_safe --defaults-file={{ db_dbdata_dir }}/{{ db_uuid.stdout }}/my{{ db_port }}.conf --user={{ db_install_user }}
+

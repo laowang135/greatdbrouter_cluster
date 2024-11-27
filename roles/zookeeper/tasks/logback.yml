@@ -1,0 +1,45 @@
+---
+- name: Check if the logback.xml file exists on the remote server
+  stat:
+    path: "{{ zookeeper_app_base_dir }}/conf/logback.xml"
+  register: logback_file_check
+
+- name: Copy logback.xml template to zookeeper_conf_dir
+  template:
+    src: logback.xml.j2
+    dest: "{{ zookeeper_conf_dir }}/logback.xml"
+    owner: "{{ zookeeper_install_user }}"
+    group: "{{ zookeeper_install_user }}"
+  when: logback_file_check.stat.exists
+
+- name: Copy configuration.xsl to zookeeper_conf_dir
+  copy:
+    src: "{{ zookeeper_app_base_dir }}/conf/configuration.xsl"
+    dest: "{{ zookeeper_conf_dir }}/"
+    owner: "{{ zookeeper_install_user }}"
+    group: "{{ zookeeper_install_user }}"
+    remote_src: True
+  when: logback_file_check.stat.exists
+
+# - name: Check if the log4j.properties file exists on the remote server
+#   stat:
+#     path: "{{zookeeper_app_base_dir}}/log4j.properties"
+#   register: log4j_file_check
+
+# - name: Copy log4j.properties template to zookeeper_conf_dir
+#   template:
+#     src: log4j.properties.j2
+#     dest: "{{ zookeeper_conf_dir }}/log4j.properties"
+#     owner: "{{ zookeeper_install_user }}"
+#     group: "{{ zookeeper_install_user }}"
+#   when: log4j_file_check.stat.exists
+  
+# - name: Copy  configuration.xsl to zookeeper_conf_dir
+#   become: yes
+#   copy:
+#     src: "{{ zookeeper_app_base_dir }}/conf/configuration.xsl"
+#     dest: "{{ zookeeper_conf_dir }}/"
+#     owner: "{{ zookeeper_install_user }}"
+#     group: "{{ zookeeper_install_user }}"
+#     remote_src: True
+#   when: log4j_file_check.stat.exists

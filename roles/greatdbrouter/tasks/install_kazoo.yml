@@ -1,0 +1,19 @@
+---
+- name: Copy kazoo_package to install_tmpdir
+  copy:
+    src: "{{ kazoo_package }}"
+    dest: "{{ install_tmpdir }}/"
+    owner: "{{ router_install_group }}"
+    group: "{{ router_install_group }}"
+  when: kazoo_package is defined
+
+- name: Check kazoo rpm package
+  shell: rpm -qa|grep kazoo
+  register: kazoo_rpm
+  ignore_errors: yes
+
+- name: Install kazoo_package
+  become: yes
+  shell:
+    cmd: yum localinstall -y {{ install_tmpdir }}/{{ kazoo_package }}
+  when: kazoo_rpm.rc != 0

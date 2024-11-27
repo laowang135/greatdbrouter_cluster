@@ -1,0 +1,32 @@
+---
+- name: show /etc/localtime
+  become: yes
+  ansible.builtin.command:
+    cmd: ls -lah /etc/localtime
+  register: etc_localtime
+  changed_when: etc_localtime.rc != 0
+  ignore_errors: yes
+
+- name: Set timezone to Asia/Shanghai
+  become: yes
+  timezone:
+    name: Asia/Shanghai
+
+- name: show /etc/localtime again
+  become: yes
+  ansible.builtin.command:
+    cmd: ls -lah /etc/localtime
+  changed_when: false
+
+
+
+
+
+
+
+
+
+
+
+
+
