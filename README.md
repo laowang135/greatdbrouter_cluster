@@ -1,6 +1,7 @@
 # GreatDBRouter cluster
 <!-- 部署命令  -->
 ansible-playbook deploy.yml -v
+
 <!-- 本机若无ansible，可通过脚本安装ansible -->
 bash -x ansible/ansible_install.sh
 
