@@ -4,6 +4,9 @@ ansible-playbook deploy.yml -v
 
 - 本机若无ansible，可通过脚本安装ansible
 bash -x ansible/ansible_install.sh
+- 本机若无ansible，可通过脚本安装ansible 
+
+`bash -x ansible/ansible_install.sh`
 
 - 加载环境变量
 source ~/.bashrc
