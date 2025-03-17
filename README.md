@@ -73,7 +73,7 @@
   roles/greatdbrouter/tasks/install_kazoo.yml
   ```
 
-- 
+
 
 - jinja2配置文件路径
 
