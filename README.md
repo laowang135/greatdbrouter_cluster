@@ -64,19 +64,13 @@
 - 若使用指定安装包部署，则直接编辑安装包对应的值即可，版本信息无需关注；
 
   ```
-  
-  ```
   [ inventory.yml 文件中 package_name info 部分 ] 
-  ```
   ```
 
 - 操作系统包管理工具默认使用yum，若需要变更，更改以下文件
 
   ```
-  
-  ```
   roles/greatdbrouter/tasks/install_kazoo.yml
-  ```
   ```
 
 
@@ -172,5 +166,3 @@
   默认连接db客户端命令，mysql or greatdb
   db_client: mysql
   ```
-  
-  
