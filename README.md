@@ -83,17 +83,16 @@
 - 默认安装包名示例：
   - {{ db_client }}-{{ db_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
     - mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
-
-  - percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
-    percona-xtrabackup-{{ percona_xtrabackup_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
-  - jdk-8u111-linux-x86_64.tar.gz
-    jdk-{{ jdk_version }}-linux-{{ cpu_architectur }}.tar.gz
-  - zookeeper-3.8.3.tar.gz
-    zookeeper-{{ zookeeper_version }}.tar.gz
-  - GreatDBRouter-6.0.0.6224-LTS-2-85621274-Linux-glibc2.28-x86_64.tar.gz
-    GreatDBRouter-{{ router_version }}-Linux-glibc{{ router_package_glibc  }}-{{ cpu_architectur }}.tar.gz
-
-    符合以上安装包默认规范时，只需要填写版本号即可，安装包信息无需关注；
+  - percona-xtrabackup-{{ percona_xtrabackup_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
+    - percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
+  - jdk-{{ jdk_version }}-linux-{{ cpu_architectur }}.tar.gz
+    - jdk-8u111-linux-x86_64.tar.gz
+  - zookeeper-{{ zookeeper_version }}.tar.gz
+    - zookeeper-3.8.3.tar.gz
+  - GreatDBRouter-{{ router_version }}-Linux-glibc{{ router_package_glibc  }}-{{ cpu_architectur }}.tar.gz  
+    - GreatDBRouter-6.0.0.6224-LTS-2-85621274-Linux-glibc2.28-x86_64.tar.gz
+    
+  符合以上安装包默认规范时，只需要填写版本号即可，安装包信息无需关注；
 若使用安装包直接匹配安装，则直接填写package_name info信息即可，package_version info信息无需关注，这部分信息只作为部署base路径命名 
 
 - 配置示例
