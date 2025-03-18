@@ -81,8 +81,9 @@
   ```
 
 - 默认安装包名示例：
-  - mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
-    {{ db_client }}-{{ db_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
+  - {{ db_client }}-{{ db_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
+    - mysql-8.0.32-linux-glibc2.17-x86_64.tar.gz
+
   - percona-xtrabackup-8.0.35-linux-glibc2.17-x86_64.tar.gz
     percona-xtrabackup-{{ percona_xtrabackup_version }}-linux-glibc{{ db_package_glibc }}-{{ cpu_architectur }}.tar.gz
   - jdk-8u111-linux-x86_64.tar.gz
@@ -104,7 +105,7 @@
    - jdk-8u111-linux-x86_64.tar.gz
    - zookeeper-3.8.3.tar.gz
    - GreatDBRouter-6.0.0.6192-LTS-1-102ea9ed-Linux-glibc2.17-x86_64.tar.gz
-  ```
+  ```yaml
   # package_version info
   db_version: "8.0.36"
   percona_xtrabackup_version: "8.0.35"
@@ -128,7 +129,7 @@
    - jdk-8u111-linux-amd64.tar.gz
    - zookeeper-3.8.3.tar.gz
    - GreatDBRouter-6.0.0.6192-LTS-1-102ea9ed-Linux-glibc2.17-x86_64.tar.gz
-  ```
+  ```yaml
   # package_version info
   db_version: "8.0.36"
   percona_xtrabackup_version: "8.0.35"
